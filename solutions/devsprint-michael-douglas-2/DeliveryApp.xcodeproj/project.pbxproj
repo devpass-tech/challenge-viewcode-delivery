@@ -155,9 +155,9 @@
 			children = (
 				98F12963272F307100B88A87 /* Components */,
 				983271F2272753100010C63A /* Home */,
+				98EA055F272A0950007B0228 /* RestaurantDetails */,
 				98EA0559272A08D7007B0228 /* AddressSearch */,
 				98EA055C272A0933007B0228 /* RestaurantList */,
-				98EA055F272A0950007B0228 /* RestaurantDetails */,
 				98F12978272F4D7600B88A87 /* MenuItem */,
 				98F12979272F512900B88A87 /* Settings */,
 			);

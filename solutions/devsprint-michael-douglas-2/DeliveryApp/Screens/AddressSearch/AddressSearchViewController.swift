@@ -9,6 +9,14 @@ import UIKit
 
 class AddressSearchViewController: UIViewController {
 
+    private let deliveryApi = DeliveryApi()
+
+    private let addressListView: AddressListView = {
+
+        let addressListView = AddressListView()
+        return addressListView
+    }()
+
     init() {
         super.init(nibName: nil, bundle: nil)
 
@@ -19,6 +27,21 @@ class AddressSearchViewController: UIViewController {
     }
 
     override func loadView() {
-        self.view = AddressListView()
+        self.view = addressListView
+    }
+
+    override func viewDidLoad() {
+
+        deliveryApi.searchAddresses { addresses in
+
+            guard let addresses = addresses else {
+                return
+            }
+
+            DispatchQueue.main.async {
+
+                self.addressListView.updateView(with: addresses)
+            }
+        }
     }
 }

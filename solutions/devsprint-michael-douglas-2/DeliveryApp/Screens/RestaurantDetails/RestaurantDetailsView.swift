@@ -9,4 +9,7 @@ import UIKit
 
 class RestaurantDetailsView: UIView {
 
+    func updateView(with restaurantDetails: RestaurantDetails) {
+
+    }
 }

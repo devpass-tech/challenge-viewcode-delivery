@@ -9,10 +9,17 @@ import UIKit
 
 class RestaurantDetailsViewController: UIViewController {
 
+    private let deliveryApi = DeliveryApi()
+
+    private let restaurantDetailsView: RestaurantDetailsView = {
+
+        let restaurantDetailsView = RestaurantDetailsView()
+        return restaurantDetailsView
+    }()
+
     init() {
         super.init(nibName: nil, bundle: nil)
 
-        navigationItem.title = "Restaurant Details"
     }
 
     required init?(coder: NSCoder) {
@@ -20,6 +27,21 @@ class RestaurantDetailsViewController: UIViewController {
     }
 
     override func loadView() {
-        self.view = RestaurantDetailsView()
+        self.view = restaurantDetailsView
+    }
+
+    override func viewDidLoad() {
+
+        deliveryApi.fetchRestaurantDetails { restaurantDetails in
+
+            guard let restaurantDetails = restaurantDetails else {
+                return
+            }
+
+            DispatchQueue.main.async {
+
+                self.restaurantDetailsView.updateView(with: restaurantDetails)
+            }
+        }
     }
 }

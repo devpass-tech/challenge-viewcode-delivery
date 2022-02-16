@@ -8,5 +8,8 @@
 import UIKit
 
 class AddressListView: UIView {
-    
+
+    func updateView(with addresses: [Address]) {
+        
+    }
 }
