@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		62F9513627C4486500294957 /* UIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F9513527C4486500294957 /* UIViewPreview.swift */; };
+		62F9513927C4498B00294957 /* CategoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F9513827C4498B00294957 /* CategoryCellView.swift */; };
 		98228D7D27BC489F006A38BB /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98228D7C27BC489F006A38BB /* Address.swift */; };
 		98228D7F27BC490E006A38BB /* RestaurantDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98228D7E27BC490E006A38BB /* RestaurantDetails.swift */; };
 		983271C6272752B50010C63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983271C5272752B50010C63A /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		62F9513527C4486500294957 /* UIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPreview.swift; sourceTree = "<group>"; };
+		62F9513827C4498B00294957 /* CategoryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellView.swift; sourceTree = "<group>"; };
 		98228D7C27BC489F006A38BB /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		98228D7E27BC490E006A38BB /* RestaurantDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetails.swift; sourceTree = "<group>"; };
 		983271B9272752AF0010C63A /* DeliveryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliveryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +101,14 @@
 				62F9513527C4486500294957 /* UIViewPreview.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		62F9513727C4494E00294957 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				62F9513827C4498B00294957 /* CategoryCellView.swift */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		983271B0272752AF0010C63A = {
@@ -248,6 +258,7 @@
 		98F12963272F307100B88A87 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				62F9513727C4494E00294957 /* Category */,
 				98C4368027ADADC000D9048A /* SampleComponentView.swift */,
 			);
 			path = Components;
@@ -379,6 +390,7 @@
 				62F9513627C4486500294957 /* UIViewPreview.swift in Sources */,
 				98AF572627ADB16E00339A66 /* HomeView.swift in Sources */,
 				98AF572727ADB16E00339A66 /* AddressSearchViewController.swift in Sources */,
+				62F9513927C4498B00294957 /* CategoryCellView.swift in Sources */,
 				98AF572827ADB16E00339A66 /* AddressListView.swift in Sources */,
 				98AF572927ADB16E00339A66 /* RestaurantListViewController.swift in Sources */,
 				98AF572A27ADB16E00339A66 /* RestaurantListView.swift in Sources */,
