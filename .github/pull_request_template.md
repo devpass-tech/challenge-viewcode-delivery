@@ -8,7 +8,7 @@ Coloque um ```x``` nas caixas que se aplicam.
 - [] Não contém código WIP
 - [] Teste Unitário Implementado
  
-### Evidências da Implementação:
+### Evidências:
 | iPhone SE | iPhone 13 Pro Max |
 | ------ | ------ |
 | print  | print |
