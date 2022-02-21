@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62F9513627C4486500294957 /* UIViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F9513527C4486500294957 /* UIViewPreview.swift */; };
 		98228D7D27BC489F006A38BB /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98228D7C27BC489F006A38BB /* Address.swift */; };
 		98228D7F27BC490E006A38BB /* RestaurantDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98228D7E27BC490E006A38BB /* RestaurantDetails.swift */; };
 		983271C6272752B50010C63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983271C5272752B50010C63A /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		62F9513527C4486500294957 /* UIViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPreview.swift; sourceTree = "<group>"; };
 		98228D7C27BC489F006A38BB /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		98228D7E27BC490E006A38BB /* RestaurantDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetails.swift; sourceTree = "<group>"; };
 		983271B9272752AF0010C63A /* DeliveryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliveryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62F9513427C4482900294957 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				62F9513527C4486500294957 /* UIViewPreview.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		983271B0272752AF0010C63A = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +122,7 @@
 		983271BB272752AF0010C63A /* DeliveryApp */ = {
 			isa = PBXGroup;
 			children = (
+				62F9513427C4482900294957 /* Utils */,
 				983271EC272752C50010C63A /* Resources */,
 				983271ED272752D20010C63A /* AppDelegate */,
 				983271EE272752EE0010C63A /* Screens */,
@@ -365,6 +376,7 @@
 				98AF572327ADB16E00339A66 /* SceneDelegate.swift in Sources */,
 				98AF572427ADB16E00339A66 /* SampleComponentView.swift in Sources */,
 				98AF572527ADB16E00339A66 /* HomeViewController.swift in Sources */,
+				62F9513627C4486500294957 /* UIViewPreview.swift in Sources */,
 				98AF572627ADB16E00339A66 /* HomeView.swift in Sources */,
 				98AF572727ADB16E00339A66 /* AddressSearchViewController.swift in Sources */,
 				98AF572827ADB16E00339A66 /* AddressListView.swift in Sources */,
