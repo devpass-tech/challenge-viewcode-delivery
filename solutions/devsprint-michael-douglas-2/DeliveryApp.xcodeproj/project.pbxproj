@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		281C5FFC619C076BD774F25D /* Pods_DeliveryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB93DD64434C58557ABF289 /* Pods_DeliveryApp.framework */; };
 		6CD242E227C5295E002E3F7A /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD242E127C5295E002E3F7A /* EmptyView.swift */; };
+		6CD242E427C5363A002E3F7A /* EmptyViewSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD242E327C5363A002E3F7A /* EmptyViewSnapshot.swift */; };
 		98228D7D27BC489F006A38BB /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98228D7C27BC489F006A38BB /* Address.swift */; };
 		98228D7F27BC490E006A38BB /* RestaurantDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98228D7E27BC490E006A38BB /* RestaurantDetails.swift */; };
 		983271C6272752B50010C63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983271C5272752B50010C63A /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		1E1EAAF15FE0F91BDA61EB95 /* Pods-DeliveryApp-DeliveryAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryApp-DeliveryAppTests.debug.xcconfig"; path = "Target Support Files/Pods-DeliveryApp-DeliveryAppTests/Pods-DeliveryApp-DeliveryAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		426FB36F67E6B844B7CFE151 /* Pods-DeliveryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryApp.release.xcconfig"; path = "Target Support Files/Pods-DeliveryApp/Pods-DeliveryApp.release.xcconfig"; sourceTree = "<group>"; };
 		6CD242E127C5295E002E3F7A /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		6CD242E327C5363A002E3F7A /* EmptyViewSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewSnapshot.swift; sourceTree = "<group>"; };
 		6E4C9FE36513C18E9DCF8DC2 /* Pods-DeliveryApp-DeliveryAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryApp-DeliveryAppTests.release.xcconfig"; path = "Target Support Files/Pods-DeliveryApp-DeliveryAppTests/Pods-DeliveryApp-DeliveryAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		70DFEA8DA434C31C4DD045D8 /* Pods-DeliveryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryApp.debug.xcconfig"; path = "Target Support Files/Pods-DeliveryApp/Pods-DeliveryApp.debug.xcconfig"; sourceTree = "<group>"; };
 		98228D7C27BC489F006A38BB /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				983271D3272752B50010C63A /* DeliveryAppTests.swift */,
+				6CD242E327C5363A002E3F7A /* EmptyViewSnapshot.swift */,
 			);
 			path = DeliveryAppTests;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CD242E427C5363A002E3F7A /* EmptyViewSnapshot.swift in Sources */,
 				983271D4272752B50010C63A /* DeliveryAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,7 +12,7 @@ final class EmptyView: UIView {
         let emptyTitleTextLabel = UILabel()
         emptyTitleTextLabel.translatesAutoresizingMaskIntoConstraints = false
         emptyTitleTextLabel.text = "Endereço não encontrado"
-        emptyTitleTextLabel.font = .boldSystemFont(ofSize: 10)
+        emptyTitleTextLabel.font = .boldSystemFont(ofSize: 18)
         emptyTitleTextLabel.textAlignment = .center
         return emptyTitleTextLabel
     }()
@@ -27,6 +27,7 @@ final class EmptyView: UIView {
     
     init() {
         super.init(frame: .zero)
+        backgroundColor = .white
         configureSubviews()
         configureConstraints()
     }
@@ -37,7 +38,7 @@ final class EmptyView: UIView {
     
     func configureSubviews() {
         addSubview(emptyTitleLabel)
-        addSubview(emptySubtitleTextField)
+        emptyTitleLabel.addSubview(emptySubtitleTextField)
     }
     
     func configureConstraints() {
@@ -45,8 +46,8 @@ final class EmptyView: UIView {
             emptyTitleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             emptyTitleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             
-            emptySubtitleTextField.centerXAnchor.constraint(equalTo: emptyTitleLabel.centerXAnchor),
-            emptySubtitleTextField.centerYAnchor.constraint(equalTo: emptyTitleLabel.centerYAnchor)
+            emptySubtitleTextField.centerXAnchor.constraint(equalTo: emptyTitleLabel.centerXAnchor, constant: 100),
+            emptySubtitleTextField.centerYAnchor.constraint(equalTo: emptyTitleLabel.centerYAnchor, constant: 60)
         ])
     }
 }
