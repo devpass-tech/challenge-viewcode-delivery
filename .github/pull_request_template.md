@@ -1,5 +1,5 @@
-### Descrição
-- Descreva o que e como está sendo feita a nova implementação
+### Descrição e Solução
+- Descreva o que está sendo implementado e como foi feito.
  
 ### Checklist:
 - [ ] Não adiciona código duplicado
