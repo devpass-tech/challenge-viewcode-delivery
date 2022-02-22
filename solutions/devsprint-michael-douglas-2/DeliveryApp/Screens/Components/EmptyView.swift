@@ -8,21 +8,21 @@
 import UIKit
 
 final class EmptyView: UIView {
-    private lazy var emptyLabel: UILabel = {
-        let emptyTextLabel = UILabel()
-        emptyTextLabel.translatesAutoresizingMaskIntoConstraints = false
-        emptyTextLabel.text = "Endereço não encontrado"
-        emptyTextLabel.font = .boldSystemFont(ofSize: 10)
-        emptyTextLabel.textAlignment = .center
-        return emptyTextLabel
+    private lazy var emptyTitleLabel: UILabel = {
+        let emptyTitleTextLabel = UILabel()
+        emptyTitleTextLabel.translatesAutoresizingMaskIntoConstraints = false
+        emptyTitleTextLabel.text = "Endereço não encontrado"
+        emptyTitleTextLabel.font = .boldSystemFont(ofSize: 10)
+        emptyTitleTextLabel.textAlignment = .center
+        return emptyTitleTextLabel
     }()
     
-    private lazy var emptyText: UITextField = {
-        let emptyTextField = UITextField()
-        emptyTextField.translatesAutoresizingMaskIntoConstraints = false
-        emptyTextField.placeholder = "Procure por ruas com número e bairro utilizando o campo de busca"
-        emptyTextField.textAlignment = .center
-        return emptyTextField
+    private lazy var emptySubtitleTextField: UITextField = {
+        let emptySubtitleTextField = UITextField()
+        emptySubtitleTextField.translatesAutoresizingMaskIntoConstraints = false
+        emptySubtitleTextField.placeholder = "Procure por ruas com número e bairro utilizando o campo de busca"
+        emptySubtitleTextField.textAlignment = .center
+        return emptySubtitleTextField
     }()
     
     init() {
@@ -36,17 +36,17 @@ final class EmptyView: UIView {
     }
     
     func configureSubviews() {
-        addSubview(emptyLabel)
-        addSubview(emptyText)
+        addSubview(emptyTitleLabel)
+        addSubview(emptySubtitleTextField)
     }
     
     func configureConstraints() {
         NSLayoutConstraint.activate([
-            emptyLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            emptyLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            emptyTitleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            emptyTitleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             
-            emptyText.centerXAnchor.constraint(equalTo: emptyLabel.centerXAnchor),
-            emptyText.centerYAnchor.constraint(equalTo: emptyLabel.centerYAnchor)
+            emptySubtitleTextField.centerXAnchor.constraint(equalTo: emptyTitleLabel.centerXAnchor),
+            emptySubtitleTextField.centerYAnchor.constraint(equalTo: emptyTitleLabel.centerYAnchor)
         ])
     }
 }
