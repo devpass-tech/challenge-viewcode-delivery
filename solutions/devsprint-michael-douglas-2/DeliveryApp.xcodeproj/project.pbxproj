@@ -31,6 +31,7 @@
 		98AF573227ADB16E00339A66 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C4368627ADAEA500D9048A /* Restaurant.swift */; };
 		98AF573327ADB16E00339A66 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C4368827ADAEBE00D9048A /* String+Extensions.swift */; };
 		98AF573627ADB34C00339A66 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AF573527ADB34C00339A66 /* DebugViewController.swift */; };
+		BCD8FC0E27C4461400DCD5E8 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD8FC0D27C4461400DCD5E8 /* AddressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		98F1297C272F51DE00B88A87 /* MenuItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewController.swift; sourceTree = "<group>"; };
 		98FC5AAA2732B938002412EA /* RestaurantDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsView.swift; sourceTree = "<group>"; };
 		98FC5AB72732C1EF002412EA /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		BCD8FC0D27C4461400DCD5E8 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 		98F12963272F307100B88A87 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BCD8FC0C27C4460100DCD5E8 /* AddressView */,
 				98C4368027ADADC000D9048A /* SampleComponentView.swift */,
 			);
 			path = Components;
@@ -258,6 +261,14 @@
 				98612706272F56AB0049403C /* SettingsView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		BCD8FC0C27C4460100DCD5E8 /* AddressView */ = {
+			isa = PBXGroup;
+			children = (
+				BCD8FC0D27C4461400DCD5E8 /* AddressView.swift */,
+			);
+			path = AddressView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +388,7 @@
 				98AF572E27ADB16E00339A66 /* MenuItemView.swift in Sources */,
 				98228D7D27BC489F006A38BB /* Address.swift in Sources */,
 				98AF572F27ADB16E00339A66 /* SettingsViewController.swift in Sources */,
+				BCD8FC0E27C4461400DCD5E8 /* AddressView.swift in Sources */,
 				98AF573027ADB16E00339A66 /* SettingsView.swift in Sources */,
 				98AF573127ADB16E00339A66 /* DeliveryApi.swift in Sources */,
 				98AF573227ADB16E00339A66 /* Restaurant.swift in Sources */,
