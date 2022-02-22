@@ -56,6 +56,10 @@ class AddressTableViewCell: UITableViewCell {
     
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
+            self.stackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 5),
+            self.stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            self.stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 16),
+            self.stackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: 5),
             
         ])
     }
