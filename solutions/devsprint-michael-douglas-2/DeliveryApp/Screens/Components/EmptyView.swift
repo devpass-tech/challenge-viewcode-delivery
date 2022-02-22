@@ -8,19 +8,33 @@
 import UIKit
 
 final class EmptyView: UIView {
-    private lazy var emptyTitleLabel: UILabel = {
-        let emptyTitleTextLabel = UILabel()
-        emptyTitleTextLabel.translatesAutoresizingMaskIntoConstraints = false
-        emptyTitleTextLabel.text = "Endereço não encontrado"
-        emptyTitleTextLabel.font = .boldSystemFont(ofSize: 18)
-        emptyTitleTextLabel.textAlignment = .center
-        return emptyTitleTextLabel
+    
+    private lazy var contentStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.distribution = .fill
+        stackView.spacing = 10
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(subtitleLabel)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
     }()
     
-    private lazy var emptySubtitleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
+        let emptyTitleLabel = UILabel()
+        emptyTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        emptyTitleLabel.text = "Endereço não encontrado"
+        emptyTitleLabel.font = .systemFont(ofSize: 17, weight: .bold)
+        emptyTitleLabel.textAlignment = .center
+        return emptyTitleLabel
+    }()
+    
+    private lazy var subtitleLabel: UILabel = {
         let emptySubtitleLabel = UILabel()
         emptySubtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         emptySubtitleLabel.text = "Procure por ruas com número e bairro utilizando o campo de busca"
+        emptySubtitleLabel.font = .systemFont(ofSize: 14, weight: .regular)
         emptySubtitleLabel.textColor = .gray
         emptySubtitleLabel.textAlignment = .center
         emptySubtitleLabel.numberOfLines = 0
@@ -29,32 +43,42 @@ final class EmptyView: UIView {
     
     init() {
         super.init(frame: .zero)
-        backgroundColor = .white
-        configureSubviews()
-        configureConstraints()
+        setupUI()
+        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureSubviews() {
-        addSubview(emptyTitleLabel)
-        emptyTitleLabel.addSubview(emptySubtitleLabel)
-    }
-    
-    func configureConstraints() {
-        NSLayoutConstraint.activate([
-            emptyTitleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            emptyTitleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            emptyTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 120),
-            emptyTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -120),
-            
-            emptySubtitleLabel.centerXAnchor.constraint(equalTo: emptyTitleLabel.centerXAnchor, constant: 100),
-            emptySubtitleLabel.centerYAnchor.constraint(equalTo: emptyTitleLabel.centerYAnchor, constant: 60),
-            emptySubtitleLabel.leadingAnchor.constraint(equalTo: emptyTitleLabel.leadingAnchor),
-            emptySubtitleLabel.trailingAnchor.constraint(equalTo: emptyTitleLabel.trailingAnchor)
-            
-        ])
+    func setupUI() {
+            backgroundColor = .white
+            setupContentStackViewConstraints()
+        }
+        
+        func setupContentStackViewConstraints() {
+            addSubview(contentStackView)
+
+            NSLayoutConstraint.activate([
+                contentStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                contentStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+                contentStackView.leadingAnchor.constraint(greaterThanOrEqualTo: self.leadingAnchor, constant: 16),
+                contentStackView.trailingAnchor.constraint(lessThanOrEqualTo: self.trailingAnchor, constant: -16)
+            ])
     }
 }
+
+//#if canImport(SwiftUI) && DEBUG
+//import SwiftUI
+//
+//struct EmptyViewPreviews: PreviewProvider {
+//    static var previews: some View {
+//        UIViewPreview {
+//            let emptyView = EmptyView()
+//            
+//            return emptyView
+//        }
+//        .previewLayout(.fixed(width: 300, height: 300))
+//    }
+//}
+//#endif
