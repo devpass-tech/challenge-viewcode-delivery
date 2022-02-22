@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DividerView: UIView {
+final class DividerView: UIView {
 
     init() {
         super.init(frame: .zero)
@@ -22,7 +22,7 @@ class DividerView: UIView {
         return CGSize(width: UIView.noIntrinsicMetric, height: 1)
     }
 
-    func setStyle() {
+    private func setStyle() {
         backgroundColor = .lightGray
     }
 }
