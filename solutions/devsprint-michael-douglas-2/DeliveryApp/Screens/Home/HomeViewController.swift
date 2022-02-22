@@ -32,15 +32,12 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         deliveryApi.fetchRestaurants { restaurants in
-
             guard let restaurants = restaurants else {
-                self.homeView.updateLoading(with: false)
                 return
             }
-
             DispatchQueue.main.asyncAfter(deadline: .now()+3) {
-                
                 self.homeView.updateView(with: restaurants)
+                self.homeView.updateLoading(with: false)
             }
         }
     }

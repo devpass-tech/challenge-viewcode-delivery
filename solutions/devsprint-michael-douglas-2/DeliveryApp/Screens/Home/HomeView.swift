@@ -27,7 +27,7 @@ final class HomeView: UIView {
         return tableView
     }()
     
-    private var loadingView: LoadingView = {
+    private lazy var loadingView: LoadingView = {
         let loadingView = LoadingView()
         loadingView.translatesAutoresizingMaskIntoConstraints = false
         loadingView.loadingSpinner.startAnimating()
@@ -50,12 +50,17 @@ final class HomeView: UIView {
 
         self.restaurants = restaurants
         self.tableView.reloadData()
-        updateLoading(with: false)
     }
     
     func updateLoading(with isLoading: Bool) {
-        loadingView.isHidden = !isLoading
-        loadingView.setLoadingMessage("Carregando Restaurantes...")
+        if isLoading {
+            loadingView.isHidden = !isLoading
+            loadingView.loadingSpinner.startAnimating()
+            loadingView.setLoadingMessage("Carregando Restaurantes...")
+        } else {
+            loadingView.isHidden = !isLoading
+            loadingView.loadingSpinner.stopAnimating()
+        }
     }
     
 }
@@ -63,7 +68,6 @@ final class HomeView: UIView {
 private extension HomeView {
 
     func setupViews() {
-
         self.backgroundColor = .white
 
         self.configureSubviews()
@@ -71,18 +75,26 @@ private extension HomeView {
     }
 
     func configureSubviews() {
-        
         self.addSubview(self.tableView)
         self.addSubview(self.loadingView)
     }
 
     func configureSubviewsConstraints() {
-
+        configureLoadingViewConstraints()
+        configureTableViewConstraints()
+    }
+    
+    func configureLoadingViewConstraints() {
         NSLayoutConstraint.activate([
             self.loadingView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             self.loadingView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
             self.loadingView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             self.loadingView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+        ])
+    }
+    
+    func configureTableViewConstraints() {
+        NSLayoutConstraint.activate([
             self.tableView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
             self.tableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),

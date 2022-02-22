@@ -20,7 +20,7 @@ final class LoadingView: UIView {
         return container
     }()
 
-    var loadingSpinner: UIActivityIndicatorView = {
+    lazy var loadingSpinner: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(frame: .zero)
         indicator.translatesAutoresizingMaskIntoConstraints = false
         indicator.style = .large
@@ -30,7 +30,7 @@ final class LoadingView: UIView {
         return indicator
     }()
 
-    var loadingMessage: UILabel = {
+    lazy var loadingMessage: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Carregando..."
@@ -53,17 +53,15 @@ final class LoadingView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Public Methods
+    // MARK: - Internal Methods
     func setLoadingMessage(_ message: String?) {
         loadingMessage.text = message ?? "Carregando..."
     }
 }
 
-
 private extension LoadingView {
 
     func setupViews() {
-
         self.configureSubviews()
         self.configureSubviewsConstraints()
     }
@@ -75,11 +73,7 @@ private extension LoadingView {
     }
 
     func configureSubviewsConstraints() {
-
-
-
         NSLayoutConstraint.activate([
-
             self.loadingContainer.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             self.loadingContainer.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
             self.loadingContainer.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
