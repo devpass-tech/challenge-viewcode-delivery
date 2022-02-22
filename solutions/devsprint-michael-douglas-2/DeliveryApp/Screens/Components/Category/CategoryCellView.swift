@@ -21,7 +21,6 @@ final class CategoryCellView: UIView {
         let label = UILabel()
         label.text = "Pizza"
         label.textAlignment = .center
-        label.numberOfLines = 1
         return label
     }()
 
