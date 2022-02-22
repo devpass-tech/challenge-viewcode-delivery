@@ -9,7 +9,7 @@ import UIKit
 
 final class CategoryCellView: UIView {
 
-    let imageView: UIImageView = {
+    private lazy var imageView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "pizza")
         image.layer.cornerRadius = 8
@@ -17,7 +17,7 @@ final class CategoryCellView: UIView {
         return image
     }()
 
-    let titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Pizza"
         label.textAlignment = .center
