@@ -8,29 +8,29 @@
 import UIKit
 
 struct RestaurantCellViewConfiguration {
-    let restaurantName: String
-    let restaurantType: String
-    let restaurantImage: String
+    let name: String
+    let detail: String
+    let icon: String
 }
 
 class RestaurantCellView: UIView {
     
-    private lazy var restaurantName: UILabel = {
+    private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.font = .boldSystemFont(ofSize: 15)
         return label
     }()
     
-    private lazy var restaurantType: UILabel = {
+    private lazy var detailLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 13)
+        label.font = .boldSystemFont(ofSize: 13)
         label.textColor = .lightGray
         return label
     }()
     
-    private lazy var restaurantImage: UIImageView = {
+    private lazy var iconImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.layer.cornerRadius = 25
@@ -38,11 +38,10 @@ class RestaurantCellView: UIView {
         return image
     }()
     
-        
     func updateView(with configuration: RestaurantCellViewConfiguration) {
-        restaurantName.text = configuration.restaurantName
-        restaurantType.text = configuration.restaurantType
-        restaurantImage.image = UIImage(named: configuration.restaurantImage)
+        nameLabel.text = configuration.name
+        detailLabel.text = configuration.detail
+        iconImageView.image = UIImage(named: configuration.icon)
     }
     
     public init() {
@@ -58,9 +57,9 @@ class RestaurantCellView: UIView {
     }
 
     private func addSubviews() {
-        addSubview(restaurantImage)
-        addSubview(restaurantName)
-        addSubview(restaurantType)
+        addSubview(iconImageView)
+        addSubview(nameLabel)
+        addSubview(detailLabel)
     }
 }
 
@@ -68,16 +67,16 @@ extension RestaurantCellView {
     
     func setConstraints() {
         NSLayoutConstraint.activate([
-            restaurantImage.topAnchor.constraint(equalTo: topAnchor, constant: 22),
-            restaurantImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-            restaurantImage.widthAnchor.constraint(equalToConstant: 48),
-            restaurantImage.heightAnchor.constraint(equalToConstant: 48),
+            iconImageView.topAnchor.constraint(equalTo: topAnchor, constant: 22),
+            iconImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            iconImageView.widthAnchor.constraint(equalToConstant: 48),
+            iconImageView.heightAnchor.constraint(equalToConstant: 48),
             
-            restaurantName.topAnchor.constraint(equalTo: topAnchor, constant: 28),
-            restaurantName.leftAnchor.constraint(equalTo: self.restaurantImage.rightAnchor, constant: 20),
+            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 28),
+            nameLabel.leftAnchor.constraint(equalTo: self.iconImageView.rightAnchor, constant: 20),
             
-            restaurantType.topAnchor.constraint(equalTo: self.restaurantName.bottomAnchor, constant: 5),
-            restaurantType.leftAnchor.constraint(equalTo: self.restaurantImage.rightAnchor, constant: 20),
+            detailLabel.topAnchor.constraint(equalTo: self.nameLabel.bottomAnchor, constant: 5),
+            detailLabel.leftAnchor.constraint(equalTo: self.iconImageView.rightAnchor, constant: 20),
             
         ])
     }
