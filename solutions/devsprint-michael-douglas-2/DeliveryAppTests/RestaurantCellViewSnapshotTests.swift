@@ -14,9 +14,9 @@ class RestaurantCellViewSnapshotTests: XCTestCase {
     let size = CGSize(width: 300, height: 80)
 
     func testRestaurantCellViewSnapshotTests() throws {
-        let configuration = RestaurantCellViewConfiguration(restaurantName: "Percoriro Trattoria", restaurantType: "Italiana • 38-48 min", restaurantImage: "restaurant-logo")
+        let configuration = RestaurantCellViewConfiguration(name: "Percoriro Trattoria", detail: "Italiana • 38-48 min", icon: "restaurant-logo")
         
-        let restaurantCellView = RestaurantCellView()
+        let restaurantCellView = RestaurantCellView(style: .default, reuseIdentifier: nil)
         restaurantCellView.backgroundColor = .white
         restaurantCellView.updateView(with: configuration)
         
