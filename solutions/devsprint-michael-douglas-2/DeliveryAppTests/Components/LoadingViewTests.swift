@@ -19,4 +19,10 @@ class LoadingViewTests: XCTestCase {
 
         assertSnapshot(matching: sut, as: .image(size: snapshotSize), record: isRecord)
     }
+    
+    func test_loadingView_whenChangeMessage_shouldSucceed() {
+        sut.setLoadingMessage("Nova mensagem")
+
+        assertSnapshot(matching: sut, as: .image(size: snapshotSize), record: isRecord)
+    }
 }
