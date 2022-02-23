@@ -8,9 +8,11 @@
 import UIKit
 
 final class LoadingView: UIView {
-
+    
+    private let isTesting: Bool
+    
     // MARK: - View Components
-
+    
     private lazy var loadingContainer: UIView = {
         let container = UIView(frame: .zero)
         container.translatesAutoresizingMaskIntoConstraints = false
@@ -19,40 +21,41 @@ final class LoadingView: UIView {
         container.backgroundColor = .white
         return container
     }()
-
+    
     private lazy var loadingSpinner: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(frame: .zero)
         indicator.translatesAutoresizingMaskIntoConstraints = false
         indicator.style = .large
         indicator.isHidden = false
-        indicator.hidesWhenStopped = true
         indicator.color = .black
         return indicator
     }()
-
+    
     private lazy var loadingMessage: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Carregando..."
+        label.isHidden = false
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         label.numberOfLines = 0
         label.textColor = .black
         return label
     }()
-
+    
     // MARK: - Super Methods
-
-    init() {
+    
+    init(isTesting: Bool = false) {
+        self.isTesting = isTesting
         super.init(frame: .zero)
-
+        
         self.setupViews()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     // MARK: - Internal Methods
     func setLoadingMessage(_ message: String?) {
         loadingMessage.text = message ?? "Carregando..."
@@ -60,28 +63,29 @@ final class LoadingView: UIView {
     
     func updateLoading(_ isLoading: Bool) {
         isHidden = !isLoading
-        
-        if isLoading {
-            loadingSpinner.startAnimating()
-        } else {
-            loadingSpinner.stopAnimating()
+        if !isTesting {
+            if isLoading {
+                loadingSpinner.startAnimating()
+            } else {
+                loadingSpinner.stopAnimating()
+            }
         }
     }
 }
 
 private extension LoadingView {
-
+    
     func setupViews() {
         self.configureSubviews()
         self.configureSubviewsConstraints()
     }
-
+    
     func configureSubviews() {
         addSubview(loadingContainer)
         loadingContainer.addSubview(loadingMessage)
         loadingContainer.addSubview(loadingSpinner)
     }
-
+    
     func configureSubviewsConstraints() {
         NSLayoutConstraint.activate([
             self.loadingContainer.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
