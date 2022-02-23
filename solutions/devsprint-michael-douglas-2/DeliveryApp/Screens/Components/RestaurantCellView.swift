@@ -68,8 +68,6 @@ final class RestaurantCellView: UITableViewCell {
          super.init(coder: coder)
      }
     
-    
-
     private func addSubviews() {
         addSubview(iconImageView)
         addSubview(nameLabel)
