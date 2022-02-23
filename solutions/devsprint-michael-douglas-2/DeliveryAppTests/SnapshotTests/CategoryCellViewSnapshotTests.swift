@@ -13,7 +13,7 @@ class CategoryCellViewSnapshotTests: XCTestCase {
 
     let snapshotSize = CGSize(width: 100, height: 100)
 
-    func testCategoryCellView() {
+    func test_categoryView_whenSnapshot_shouldSucceed() {
         let categoryCellView = CategoryCellView()
 
         assertSnapshot(matching: categoryCellView, as: .image(size: snapshotSize))
