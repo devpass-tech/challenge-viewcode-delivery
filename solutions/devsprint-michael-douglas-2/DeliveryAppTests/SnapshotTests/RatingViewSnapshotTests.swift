@@ -13,7 +13,7 @@ class RatingViewSnapshotTests: XCTestCase {
 
     let snapshotSize = CGSize(width: 300, height: 100)
 
-    func test_dividerView_whenSnapshot_shouldSucceed() {
+    func test_ratingView_whenSnapshot_shouldSucceed() {
         let ratingView = RatingView()
 
         assertSnapshot(matching: ratingView, as: .image(size: snapshotSize))
