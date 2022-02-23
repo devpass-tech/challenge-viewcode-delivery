@@ -11,9 +11,9 @@ import SnapshotTesting
 
 class DividerViewSnapshotTests: XCTestCase {
 
-    let snapshotSize = CGSize(width: 200, height: 100)
+    let snapshotSize = CGSize(width: 200, height: 1)
 
-    func testDividerView() {
+    func test_dividerView_whenSnapshot_shouldSucceed() {
         let dividerView = DividerView()
 
         assertSnapshot(matching: dividerView, as: .image(size: snapshotSize))
