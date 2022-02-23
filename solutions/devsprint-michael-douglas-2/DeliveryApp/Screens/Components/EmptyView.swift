@@ -67,18 +67,3 @@ final class EmptyView: UIView {
             ])
     }
 }
-
-//#if canImport(SwiftUI) && DEBUG
-//import SwiftUI
-//
-//struct EmptyViewPreviews: PreviewProvider {
-//    static var previews: some View {
-//        UIViewPreview {
-//            let emptyView = EmptyView()
-//            
-//            return emptyView
-//        }
-//        .previewLayout(.fixed(width: 300, height: 300))
-//    }
-//}
-//#endif
