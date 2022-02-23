@@ -56,22 +56,7 @@ final class CategoryCellView: UIView {
         ])
     }
 
-    func setStyle() {
+    private func setStyle() {
         backgroundColor = .white
     }
 }
-
-#if canImport(SwiftUI) && DEBUG
-import SwiftUI
-
-struct CategoryCellViewPreviews: PreviewProvider {
-    static var previews: some View {
-        UIViewPreview {
-            let categoryCellView = CategoryCellView()
-
-            return categoryCellView
-        }
-        .previewLayout(.fixed(width: 70, height: 95))
-    }
-}
-#endif
