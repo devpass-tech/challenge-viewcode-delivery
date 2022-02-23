@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RatingView: UIView {
+final class RatingView: UIView {
 
     private lazy var stackView: UIStackView = {
         let stack = UIStackView(frame: .zero)
@@ -62,7 +62,7 @@ class RatingView: UIView {
         ])
     }
 
-    func setStyle() {
+    private func setStyle() {
         backgroundColor = .white
     }
 }
