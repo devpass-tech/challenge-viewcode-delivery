@@ -29,6 +29,7 @@ final class HomeView: UIView {
     
     private lazy var loadingView: LoadingView = {
         let loadingView = LoadingView()
+        loadingView.setLoadingMessage("Carregando Restaurantes...")
         loadingView.translatesAutoresizingMaskIntoConstraints = false
         loadingView.isHidden = true
         return loadingView
@@ -52,15 +53,8 @@ final class HomeView: UIView {
     }
     
     func updateLoading(with isLoading: Bool) {
-        loadingView.isHidden = !isLoading
-        if isLoading {
-            loadingView.updateLoading(isLoading)
-            loadingView.setLoadingMessage("Carregando Restaurantes...")
-        } else {
-            loadingView.updateLoading(isLoading)
-        }
+        loadingView.updateLoading(isLoading)
     }
-    
 }
 
 private extension HomeView {

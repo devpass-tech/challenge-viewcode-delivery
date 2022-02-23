@@ -59,6 +59,8 @@ final class LoadingView: UIView {
     }
     
     func updateLoading(_ isLoading: Bool) {
+        isHidden = !isLoading
+        
         if isLoading {
             loadingSpinner.startAnimating()
         } else {
