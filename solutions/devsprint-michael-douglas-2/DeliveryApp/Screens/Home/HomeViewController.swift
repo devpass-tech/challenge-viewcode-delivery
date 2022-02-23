@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
             guard let restaurants = restaurants else {
                 return
             }
-            DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+            DispatchQueue.main.async {
                 self.homeView.updateView(with: restaurants)
                 self.homeView.updateLoading(with: false)
             }

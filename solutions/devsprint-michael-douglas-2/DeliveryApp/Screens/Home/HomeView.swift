@@ -30,7 +30,6 @@ final class HomeView: UIView {
     private lazy var loadingView: LoadingView = {
         let loadingView = LoadingView()
         loadingView.translatesAutoresizingMaskIntoConstraints = false
-        loadingView.loadingSpinner.startAnimating()
         loadingView.isHidden = true
         return loadingView
     }()
@@ -53,13 +52,12 @@ final class HomeView: UIView {
     }
     
     func updateLoading(with isLoading: Bool) {
+        loadingView.isHidden = !isLoading
         if isLoading {
-            loadingView.isHidden = !isLoading
-            loadingView.loadingSpinner.startAnimating()
+            loadingView.updateLoading(isLoading)
             loadingView.setLoadingMessage("Carregando Restaurantes...")
         } else {
-            loadingView.isHidden = !isLoading
-            loadingView.loadingSpinner.stopAnimating()
+            loadingView.updateLoading(isLoading)
         }
     }
     

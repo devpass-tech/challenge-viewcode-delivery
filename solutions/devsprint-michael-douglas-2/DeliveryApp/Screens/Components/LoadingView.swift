@@ -11,7 +11,7 @@ final class LoadingView: UIView {
 
     // MARK: - View Components
 
-    private let loadingContainer: UIView = {
+    private lazy var loadingContainer: UIView = {
         let container = UIView(frame: .zero)
         container.translatesAutoresizingMaskIntoConstraints = false
         container.isOpaque = true
@@ -20,7 +20,7 @@ final class LoadingView: UIView {
         return container
     }()
 
-    lazy var loadingSpinner: UIActivityIndicatorView = {
+    private lazy var loadingSpinner: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(frame: .zero)
         indicator.translatesAutoresizingMaskIntoConstraints = false
         indicator.style = .large
@@ -30,7 +30,7 @@ final class LoadingView: UIView {
         return indicator
     }()
 
-    lazy var loadingMessage: UILabel = {
+    private lazy var loadingMessage: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Carregando..."
@@ -56,6 +56,14 @@ final class LoadingView: UIView {
     // MARK: - Internal Methods
     func setLoadingMessage(_ message: String?) {
         loadingMessage.text = message ?? "Carregando..."
+    }
+    
+    func updateLoading(_ isLoading: Bool) {
+        if isLoading {
+            loadingSpinner.startAnimating()
+        } else {
+            loadingSpinner.stopAnimating()
+        }
     }
 }
 
