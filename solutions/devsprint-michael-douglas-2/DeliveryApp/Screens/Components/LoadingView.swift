@@ -9,7 +9,7 @@ import UIKit
 
 final class LoadingView: UIView {
     
-    private let isTesting: Bool
+    private let shouldAnimate: Bool
     
     // MARK: - View Components
     
@@ -45,8 +45,8 @@ final class LoadingView: UIView {
     
     // MARK: - Super Methods
     
-    init(isTesting: Bool = false) {
-        self.isTesting = isTesting
+    init(shouldAnimate: Bool = false) {
+        self.shouldAnimate = shouldAnimate
         super.init(frame: .zero)
         
         self.setupViews()
@@ -63,13 +63,15 @@ final class LoadingView: UIView {
     
     func updateLoading(_ isLoading: Bool) {
         isHidden = !isLoading
-        if !isTesting {
-            if isLoading {
-                loadingSpinner.startAnimating()
-            } else {
-                loadingSpinner.stopAnimating()
-            }
+        
+        guard shouldAnimate else { return }
+        
+        if isLoading {
+            loadingSpinner.startAnimating()
+        } else {
+            loadingSpinner.stopAnimating()
         }
+        
     }
 }
 
