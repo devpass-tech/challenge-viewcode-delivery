@@ -1,8 +1,8 @@
 ## Xcode
-*.xcodeproj/*
-!*.xcodeproj/project.pbxproj
-!*.xcodeproj/xcshareddata/
-!*.xcworkspace/contents.xcworkspacedata
+
+# [ViewCode-MD] - XcodeGen Implemented
+solutions/devsprint-michael-douglas-2/*.xcodeproj/*
+solutions/devsprint-michael-douglas-2/*.xcworkspace/*
 
 ## Build generated
 build/
