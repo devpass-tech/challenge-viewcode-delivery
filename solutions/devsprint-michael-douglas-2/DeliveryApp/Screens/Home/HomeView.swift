@@ -27,6 +27,14 @@ final class HomeView: UIView {
         return tableView
     }()
     
+    private lazy var loadingView: LoadingView = {
+        let loadingView = LoadingView()
+        loadingView.setLoadingMessage("Carregando Restaurantes...")
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        loadingView.isHidden = true
+        return loadingView
+    }()
+
     init() {
         
         super.init(frame: .zero)
@@ -43,6 +51,10 @@ final class HomeView: UIView {
         self.restaurants = restaurants
         self.tableView.reloadData()
     }
+    
+    func updateLoading(with isLoading: Bool) {
+        loadingView.updateLoading(isLoading)
+    }
 }
 
 private extension HomeView {
@@ -58,12 +70,28 @@ private extension HomeView {
     func configureSubviews() {
         
         self.addSubview(self.tableView)
+        self.addSubview(self.loadingView)
     }
     
     func configureSubviewsConstraints() {
         
         NSLayoutConstraint.activate([
             
+        configureLoadingViewConstraints()
+        configureTableViewConstraints()
+    }
+    
+    func configureLoadingViewConstraints() {
+        NSLayoutConstraint.activate([
+            self.loadingView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            self.loadingView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            self.loadingView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            self.loadingView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+        ])
+    }
+    
+    func configureTableViewConstraints() {
+        NSLayoutConstraint.activate([
             self.tableView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
             self.tableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
