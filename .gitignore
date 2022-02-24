@@ -1,6 +1,8 @@
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+## Xcode
+
+# [ViewCode-MD] - XcodeGen Implemented
+solutions/devsprint-michael-douglas-2/*.xcodeproj/*
+solutions/devsprint-michael-douglas-2/*.xcworkspace/*
 
 ## Build generated
 build/
