@@ -1,9 +1,3 @@
-## Xcode
-
-# [ViewCode-MD] - XcodeGen Implemented
-solutions/devsprint-michael-douglas-2/*.xcodeproj/*
-solutions/devsprint-michael-douglas-2/*.xcworkspace/*
-
 ## Build generated
 build/
 DerivedData/
