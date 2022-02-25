@@ -63,5 +63,15 @@ class RestaurantCellViewSnapshotTests: XCTestCase {
         
         assertSnapshot(matching: restaurantCellView, as: .image(size: size), record: isRecord)
     }
+    
+    func test_restaurantCell_whenSnapshot_largeDetail() throws {
+        let configuration = RestaurantCellViewConfiguration(name: "Percoriro Trattoria", detail: "Italiana/Portuguesa - Francesa • 388-489 min", icon: "restaurant-logo")
+        
+        let restaurantCellView = RestaurantCellView(style: .default, reuseIdentifier: nil)
+        restaurantCellView.backgroundColor = .white
+        restaurantCellView.updateView(with: configuration)
+        
+        assertSnapshot(matching: restaurantCellView, as: .image(size: size), record: isRecord)
+    }
 
 }
