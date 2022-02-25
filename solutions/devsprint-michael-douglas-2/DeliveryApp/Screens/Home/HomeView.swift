@@ -34,7 +34,7 @@ final class HomeView: UIView {
         loadingView.isHidden = true
         return loadingView
     }()
-
+    
     init() {
         
         super.init(frame: .zero)
@@ -64,21 +64,15 @@ private extension HomeView {
         self.backgroundColor = .white
         
         self.configureSubviews()
-        self.configureSubviewsConstraints()
+        self.configureLoadingViewConstraints()
+        self.configureTableViewConstraints()
+        
     }
     
     func configureSubviews() {
         
         self.addSubview(self.tableView)
         self.addSubview(self.loadingView)
-    }
-    
-    func configureSubviewsConstraints() {
-        
-        NSLayoutConstraint.activate([
-            
-        configureLoadingViewConstraints()
-        configureTableViewConstraints()
     }
     
     func configureLoadingViewConstraints() {
@@ -108,13 +102,15 @@ extension HomeView: UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let restaurant = restaurants[indexPath.row]
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantCellView.cellIdentifier, for: indexPath) as? RestaurantCellView else {
             return .init()
         }
         
         cell.updateView(with: .init(
-            name: restaurants[indexPath.row].name,
-            detail: restaurants[indexPath.row].category,
+            name: restaurant.name,
+            detail: restaurant.category,
             icon: "restaurant-logo"))
         
         return cell
