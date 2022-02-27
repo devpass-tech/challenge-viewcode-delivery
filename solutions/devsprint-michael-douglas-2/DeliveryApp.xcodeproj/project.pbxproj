@@ -34,6 +34,8 @@
 		8EDCF8A202AABC0D39C45DE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B53A862BBFCE2004A820583 /* SceneDelegate.swift */; };
 		90DEEE9734C2F687A494F707 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4299706444DDB25AAFE0EF /* Address.swift */; };
 		BAA07DA6700443EF669169E7 /* LoadingViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83ED7FFA5AFCAD82D6B8B86 /* LoadingViewTests.swift */; };
+		BC21EA1E27CBE6CA009B5C42 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC21EA1D27CBE6CA009B5C42 /* AddressView.swift */; };
+		BC21EA2027CBEDB2009B5C42 /* AddressViewSnapshotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC21EA1F27CBEDB2009B5C42 /* AddressViewSnapshotTest.swift */; };
 		C116839CB42191825FD0EE20 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D984A5DB5D0A939DCA47A3C2 /* DebugViewController.swift */; };
 		C274F76137BE1C402CDD5365 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E139B851E36D86DF159299EC /* LaunchScreen.storyboard */; };
 		C83E21C6B44C37ECD30AC923 /* RestaurantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E68565F02DD38DA7F889400 /* RestaurantCellView.swift */; };
@@ -81,6 +83,8 @@
 		B7C93B473AC9B2F072DC62B4 /* Pods_DeliveryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B83ED7FFA5AFCAD82D6B8B86 /* LoadingViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewTests.swift; sourceTree = "<group>"; };
 		BB57AE2920562B7BFC4D49E6 /* MenuItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewController.swift; sourceTree = "<group>"; };
+		BC21EA1D27CBE6CA009B5C42 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		BC21EA1F27CBEDB2009B5C42 /* AddressViewSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewSnapshotTest.swift; sourceTree = "<group>"; };
 		C09A4CC3F67F3C6F5DCD55CF /* HomeViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewSnapshotTests.swift; sourceTree = "<group>"; };
 		CED50894E508253133ADF8BE /* RestaurantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListView.swift; sourceTree = "<group>"; };
 		D59DF5B978A3EA3A1A744721 /* DividerViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerViewSnapshotTests.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				F85F1AF9779855CFA0C113C3 /* CategoryCellViewSnapshotTests.swift */,
 				D59DF5B978A3EA3A1A744721 /* DividerViewSnapshotTests.swift */,
 				C09A4CC3F67F3C6F5DCD55CF /* HomeViewSnapshotTests.swift */,
+				BC21EA1F27CBEDB2009B5C42 /* AddressViewSnapshotTest.swift */,
 			);
 			path = SnapshotTests;
 			sourceTree = "<group>";
@@ -159,7 +164,6 @@
 				F9C5D0602A98CDD58141EA05 /* Pods-DeliveryApp-DeliveryAppTests.debug.xcconfig */,
 				3A2E21B7E84C8499487CDFAD /* Pods-DeliveryApp-DeliveryAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -261,6 +265,7 @@
 				4E68565F02DD38DA7F889400 /* RestaurantCellView.swift */,
 				974F53BB3C568B6A6DF0AE32 /* Category */,
 				98B0521756F2250C2953BCD5 /* Divider */,
+				BC21EA1D27CBE6CA009B5C42 /* AddressView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -402,8 +407,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1200;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 914F574E117DF9B00F203F9B /* Build configuration list for PBXProject "DeliveryApp" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -528,6 +531,7 @@
 				3C60A8D2209C638C9F496A15 /* RestaurantListViewController.swift in Sources */,
 				8EDCF8A202AABC0D39C45DE1 /* SceneDelegate.swift in Sources */,
 				4AF0E5E8838752D0E5CA015F /* SettingsView.swift in Sources */,
+				BC21EA1E27CBE6CA009B5C42 /* AddressView.swift in Sources */,
 				D6E433843A90B28D0FAA57F5 /* SettingsViewController.swift in Sources */,
 				7141E7C89DBE44E0A62CC1D0 /* String+Extensions.swift in Sources */,
 				23A230758E657B5D9ED47F02 /* UIViewPreview.swift in Sources */,
@@ -539,6 +543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C3DD1447C559C0BEB2C5E77 /* CategoryCellViewSnapshotTests.swift in Sources */,
+				BC21EA2027CBEDB2009B5C42 /* AddressViewSnapshotTest.swift in Sources */,
 				F37395B3165B215EA15560D4 /* DeliveryAppTests.swift in Sources */,
 				58F089B26DEDB509E94F4CBF /* DividerViewSnapshotTests.swift in Sources */,
 				1F4C885F4F3C9D9487D5F02F /* EmptyViewSnapshot.swift in Sources */,
