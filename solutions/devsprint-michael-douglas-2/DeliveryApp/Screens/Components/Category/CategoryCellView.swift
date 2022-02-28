@@ -45,8 +45,7 @@ final class CategoryCellView: UIView {
         subviews.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
 
         NSLayoutConstraint.activate ([
-            imageView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.widthAnchor.constraint(equalToConstant: 54),
             imageView.heightAnchor.constraint(equalToConstant: 54),
 

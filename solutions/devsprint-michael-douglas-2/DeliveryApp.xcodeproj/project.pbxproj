@@ -26,6 +26,7 @@
 		58F089B26DEDB509E94F4CBF /* DividerViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59DF5B978A3EA3A1A744721 /* DividerViewSnapshotTests.swift */; };
 		5B4409AD8F90162F8F99D4FB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519E0FC6ED546F223F315E25 /* HomeViewController.swift */; };
 		5D3E193EC91A360317172B5D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941A49E3E7F53E5B35CF07AB /* LoadingView.swift */; };
+		62C928FC27CD3925001B2C10 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C928FB27CD3925001B2C10 /* CategoryListView.swift */; };
 		71296D17201FFE6089F6E35B /* CategoryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0FF50320CD7007C96DF518 /* CategoryCellView.swift */; };
 		7141E7C89DBE44E0A62CC1D0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A063A87CD0AD580FAD73C96 /* String+Extensions.swift */; };
 		742337EDE77E85114BAC9E85 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D53954CAAA6939A5F6FD9D /* MenuItemView.swift */; };
@@ -66,6 +67,7 @@
 		5A063A87CD0AD580FAD73C96 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		5C0F0C5F377FF80D22C2F64B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		618A8B74BCAE8B805489FEF9 /* DeliveryApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryApi.swift; sourceTree = "<group>"; };
+		62C928FB27CD3925001B2C10 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
 		64BCD0BD4DE46A2E158FCA34 /* AddressListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressListView.swift; sourceTree = "<group>"; };
 		6CF1C64AFEDEABB1B74D449B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		74EE0AE75090A482AF87444A /* DeliveryAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAppTests.swift; sourceTree = "<group>"; };
@@ -159,7 +161,6 @@
 				F9C5D0602A98CDD58141EA05 /* Pods-DeliveryApp-DeliveryAppTests.debug.xcconfig */,
 				3A2E21B7E84C8499487CDFAD /* Pods-DeliveryApp-DeliveryAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -277,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				DD0FF50320CD7007C96DF518 /* CategoryCellView.swift */,
+				62C928FB27CD3925001B2C10 /* CategoryListView.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -402,8 +404,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1200;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 914F574E117DF9B00F203F9B /* Build configuration list for PBXProject "DeliveryApp" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -517,6 +517,7 @@
 				D9B0CD2A5EE25370D0A82D9E /* HomeView.swift in Sources */,
 				5B4409AD8F90162F8F99D4FB /* HomeViewController.swift in Sources */,
 				5D3E193EC91A360317172B5D /* LoadingView.swift in Sources */,
+				62C928FC27CD3925001B2C10 /* CategoryListView.swift in Sources */,
 				742337EDE77E85114BAC9E85 /* MenuItemView.swift in Sources */,
 				EE89F87B9B10B1971D03DC4E /* MenuItemViewController.swift in Sources */,
 				031E56C3C98F1ABEF07BC135 /* Restaurant.swift in Sources */,
