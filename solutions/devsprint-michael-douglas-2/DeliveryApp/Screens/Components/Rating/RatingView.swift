@@ -19,7 +19,6 @@ final class RatingView: UIView {
     private lazy var scoreLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
-        label.text = "4.8 ★★★★★"
         label.textAlignment = .left
         return label
     }()
@@ -28,7 +27,6 @@ final class RatingView: UIView {
         let label = UILabel()
         label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 15)
-        label.text = "351 avaliações"
         label.textAlignment = .right
         return label
     }()
@@ -43,6 +41,11 @@ final class RatingView: UIView {
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+
+    func configure(with viewModel: RatingViewModel) {
+        scoreLabel.text = viewModel.score
+        ratingLabel.text = viewModel.rating
     }
 
     private func addSubviews() {

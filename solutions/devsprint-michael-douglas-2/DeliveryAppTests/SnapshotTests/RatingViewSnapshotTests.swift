@@ -15,6 +15,9 @@ class RatingViewSnapshotTests: XCTestCase {
 
     func test_ratingView_whenSnapshot_shouldSucceed() {
         let ratingView = RatingView()
+        let viewModel = RatingViewModel(score: "4.8 ★★★★★",  rating: "351 avaliações")
+
+        ratingView.configure(with: viewModel)
 
         assertSnapshot(matching: ratingView, as: .image(size: snapshotSize))
     }
