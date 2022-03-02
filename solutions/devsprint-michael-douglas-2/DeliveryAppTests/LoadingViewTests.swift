@@ -13,7 +13,7 @@ class LoadingViewTests: XCTestCase {
 
     let isRecord: Bool = false
     let snapshotSize = CGSize(width: 400, height: 400)
-    let sut: LoadingView = LoadingView(shouldAnimate: true)
+    let sut: LoadingView = LoadingView(shouldAnimate: false)
 
     func test_loadingView_whenSnapshot_shouldSucceed() {
 
