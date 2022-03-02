@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AddressViewDelegate: AnyObject {
-    func didEditAddress()
+    func didTapEditAddress()
 }
 
 final class AddressView: UIView {
@@ -16,7 +16,7 @@ final class AddressView: UIView {
     private lazy var addressLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "R. Guiratinga, 500"
+        label.text = "Selecione um endereço"
         label.font = .systemFont(ofSize: 16, weight: .bold)
         label.adjustsFontSizeToFitWidth = true
         label.textColor = .black
@@ -64,7 +64,7 @@ final class AddressView: UIView {
     
     @objc
     private func editAddress(_ sender: UIButton) {
-        delegate?.didEditAddress()
+        delegate?.didTapEditAddress()
     }
     
 }
@@ -84,7 +84,7 @@ extension AddressView {
             editButton.heightAnchor.constraint(equalToConstant: 40),
             editButton.widthAnchor.constraint(equalToConstant: 70),
             editButton.leadingAnchor.constraint(equalTo: addressLabel.trailingAnchor, constant: 16),
-            editButton.centerYAnchor.constraint(equalTo: centerYAnchor),
+            editButton.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
     
