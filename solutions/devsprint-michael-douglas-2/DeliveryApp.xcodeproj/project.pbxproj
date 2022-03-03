@@ -36,6 +36,8 @@
 		90DEEE9734C2F687A494F707 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4299706444DDB25AAFE0EF /* Address.swift */; };
 		93D3FE52D4B4DAC55777C807 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBD4DFD1BA1A60A9F16143D /* DividerView.swift */; };
 		BAA07DA6700443EF669169E7 /* LoadingViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83ED7FFA5AFCAD82D6B8B86 /* LoadingViewTests.swift */; };
+		BC21EA1E27CBE6CA009B5C42 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC21EA1D27CBE6CA009B5C42 /* AddressView.swift */; };
+		BC21EA2027CBEDB2009B5C42 /* AddressViewSnapshotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC21EA1F27CBEDB2009B5C42 /* AddressViewSnapshotTest.swift */; };
 		C116839CB42191825FD0EE20 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D984A5DB5D0A939DCA47A3C2 /* DebugViewController.swift */; };
 		C274F76137BE1C402CDD5365 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E139B851E36D86DF159299EC /* LaunchScreen.storyboard */; };
 		C83E21C6B44C37ECD30AC923 /* RestaurantCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E68565F02DD38DA7F889400 /* RestaurantCellView.swift */; };
@@ -87,6 +89,8 @@
 		AC221A1BAD589AB59E321F5D /* Pods-DeliveryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryApp.debug.xcconfig"; path = "Target Support Files/Pods-DeliveryApp/Pods-DeliveryApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B83ED7FFA5AFCAD82D6B8B86 /* LoadingViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewTests.swift; sourceTree = "<group>"; };
 		BB57AE2920562B7BFC4D49E6 /* MenuItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewController.swift; sourceTree = "<group>"; };
+		BC21EA1D27CBE6CA009B5C42 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		BC21EA1F27CBEDB2009B5C42 /* AddressViewSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewSnapshotTest.swift; sourceTree = "<group>"; };
 		C09A4CC3F67F3C6F5DCD55CF /* HomeViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewSnapshotTests.swift; sourceTree = "<group>"; };
 		CA69B52776E4F635CAECCC7E /* Pods_DeliveryApp_DeliveryAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryApp_DeliveryAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED50894E508253133ADF8BE /* RestaurantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListView.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 				F85F1AF9779855CFA0C113C3 /* CategoryCellViewSnapshotTests.swift */,
 				D59DF5B978A3EA3A1A744721 /* DividerViewSnapshotTests.swift */,
 				C09A4CC3F67F3C6F5DCD55CF /* HomeViewSnapshotTests.swift */,
+				BC21EA1F27CBEDB2009B5C42 /* AddressViewSnapshotTest.swift */,
 				D6BA3897D551848000FCC171 /* RatingViewSnapshotTests.swift */,
 			);
 			path = SnapshotTests;
@@ -247,6 +252,8 @@
 				941A49E3E7F53E5B35CF07AB /* LoadingView.swift */,
 				4E68565F02DD38DA7F889400 /* RestaurantCellView.swift */,
 				974F53BB3C568B6A6DF0AE32 /* Category */,
+				98B0521756F2250C2953BCD5 /* Divider */,
+				BC21EA1D27CBE6CA009B5C42 /* AddressView.swift */,
 				F05F1884F7AA12EE689147DE /* Rating */,
 			);
 			path = Components;
@@ -411,8 +418,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1200;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 914F574E117DF9B00F203F9B /* Build configuration list for PBXProject "DeliveryApp" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -539,6 +544,7 @@
 				3C60A8D2209C638C9F496A15 /* RestaurantListViewController.swift in Sources */,
 				8EDCF8A202AABC0D39C45DE1 /* SceneDelegate.swift in Sources */,
 				4AF0E5E8838752D0E5CA015F /* SettingsView.swift in Sources */,
+				BC21EA1E27CBE6CA009B5C42 /* AddressView.swift in Sources */,
 				D6E433843A90B28D0FAA57F5 /* SettingsViewController.swift in Sources */,
 				7141E7C89DBE44E0A62CC1D0 /* String+Extensions.swift in Sources */,
 				23A230758E657B5D9ED47F02 /* UIViewPreview.swift in Sources */,
@@ -550,6 +556,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C3DD1447C559C0BEB2C5E77 /* CategoryCellViewSnapshotTests.swift in Sources */,
+				BC21EA2027CBEDB2009B5C42 /* AddressViewSnapshotTest.swift in Sources */,
 				F37395B3165B215EA15560D4 /* DeliveryAppTests.swift in Sources */,
 				58F089B26DEDB509E94F4CBF /* DividerViewSnapshotTests.swift in Sources */,
 				1F4C885F4F3C9D9487D5F02F /* EmptyViewSnapshot.swift in Sources */,
