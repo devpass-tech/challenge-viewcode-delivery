@@ -11,7 +11,7 @@ import SnapshotTesting
 
 class CategoryListViewSnapshotTests: XCTestCase {
 
-    let snapshotSize = CGSize(width: 300, height: 110)
+    let snapshotSize = CGSize(width: 250, height: 110)
 
     func test_categoryListView_whenSnapshot_shouldSucceed() {
         let categoryListView = CategoryListView()
