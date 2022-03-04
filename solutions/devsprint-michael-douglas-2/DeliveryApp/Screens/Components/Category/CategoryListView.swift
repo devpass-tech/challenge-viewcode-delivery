@@ -9,57 +9,62 @@ import UIKit
 
 class CategoryListView: UIView {
 
-    let scrollView = UIScrollView()
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = .init(top: 16, left: 16, bottom: 16, right: 16)
+        layout.itemSize = .init(width: 60, height: 90)
+        layout.scrollDirection = .horizontal
 
-    let stackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.alignment = .fill
-        stack.distribution = .equalSpacing
-        stack.spacing = 20
-        return stack
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collection.dataSource = self
+        collection.delegate = self
+        collection.showsHorizontalScrollIndicator = false
+        collection.register(CategoryCellView.self, forCellWithReuseIdentifier: CategoryCellView.identifier)
+
+        return collection
     }()
 
-    public init() {
+    init() {
         super.init(frame: .zero)
-
         addSubviews()
         setConstraints()
         setStyle()
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    @available(*, unavailable)
+    required init?(coder: NSCoder) { nil }
+
 
     private func addSubviews() {
-        addSubview(scrollView)
-        scrollView.addSubview(stackView)
-
-        for _ in 0..<10 {
-            stackView.addArrangedSubview(CategoryCellView())
-        }
+        addSubview(collectionView)
     }
 
     private func setConstraints() {
         subviews.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
-        scrollView.subviews.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
 
         NSLayoutConstraint.activate ([
-            scrollView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
-
-            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
+            collectionView.topAnchor.constraint(equalTo: self.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            collectionView.heightAnchor.constraint(equalToConstant: 110)
         ])
     }
 
     func setStyle() {
         backgroundColor = .white
+    }
+}
+
+extension CategoryListView: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        10
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCellView.identifier, for: indexPath) as? CategoryCellView else {
+            return .init()
+        }
+
+        return cell
     }
 }
