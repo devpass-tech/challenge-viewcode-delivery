@@ -9,7 +9,7 @@ import UIKit
 
 struct MenuItemCellViewModel {
     let title: String
-    let price: Int
+    let price: Double
     let icon: String
 }
 
@@ -78,7 +78,7 @@ final class MenuItemCellView: UITableViewCell {
     
     func configure(with viewModel: MenuItemCellViewModel) {
         titleLabel.text = viewModel.title
-        priceLabel.text =  "R$ " + String(viewModel.price)
+        priceLabel.text =  viewModel.price.formatWithCurrency()
         iconImageView.image = UIImage(named: viewModel.icon)
     }
 }
