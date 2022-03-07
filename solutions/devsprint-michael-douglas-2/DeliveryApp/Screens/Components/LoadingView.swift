@@ -45,7 +45,7 @@ final class LoadingView: UIView {
     
     // MARK: - Super Methods
     
-    init(shouldAnimate: Bool = false) {
+    init(shouldAnimate: Bool = true) {
         self.shouldAnimate = shouldAnimate
         super.init(frame: .zero)
         

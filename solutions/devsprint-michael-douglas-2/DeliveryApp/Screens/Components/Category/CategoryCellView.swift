@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class CategoryCellView: UIView {
+final class CategoryCellView: UICollectionViewCell {
+
+    static let identifier = "CategoryCell"
 
     private lazy var imageView: UIImageView = {
         let image = UIImageView()
@@ -24,31 +26,29 @@ final class CategoryCellView: UIView {
         return label
     }()
 
-    public init() {
-        super.init(frame: .zero)
-
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         addSubviews()
         setConstraints()
         setStyle()
     }
 
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
+    @available(*, unavailable)
+    required init?(coder: NSCoder) { nil }
 
     private func addSubviews() {
-        addSubview(imageView)
-        addSubview(titleLabel)
+        contentView.addSubview(imageView)
+        contentView.addSubview(titleLabel)
     }
 
     private func setConstraints() {
-        subviews.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
+        contentView.subviews.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
 
         NSLayoutConstraint.activate ([
             imageView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
             imageView.widthAnchor.constraint(equalToConstant: 54),
             imageView.heightAnchor.constraint(equalToConstant: 54),
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
 
             titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
