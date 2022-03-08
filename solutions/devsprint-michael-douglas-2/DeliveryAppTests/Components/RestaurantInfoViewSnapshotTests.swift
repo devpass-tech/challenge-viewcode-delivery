@@ -12,9 +12,9 @@ import SnapshotTesting
 class RestaurantInfoViewSnapshotTests: XCTestCase {
     
     let size = CGSize(width: 400, height: 100)
-    let isRecord = true
+    let isRecord = false
     
-    func test_restaurantInfoView_whenSnapshot_shouldSucceed() throws {
+    func test_restaurantInfoView_whenSnapshot_shouldSucceed() {
         let configuration = RestaurantInfoViewConfiguration(
             name: "Benjamin A Padaria",
             detail: "Padaria • 23-33 min",
@@ -29,7 +29,7 @@ class RestaurantInfoViewSnapshotTests: XCTestCase {
         
     }
     
-    func test_restaurantInfoView_whenSnapshot_noName() throws {
+    func test_restaurantInfoView_whenSnapshot_noName() {
         let configuration = RestaurantInfoViewConfiguration(
             name: "",
             detail: "Padaria • 23-33 min",
@@ -44,7 +44,7 @@ class RestaurantInfoViewSnapshotTests: XCTestCase {
         
     }
     
-    func test_restaurantInfoView_whenSnapshot_noDetail() throws {
+    func test_restaurantInfoView_whenSnapshot_noDetail() {
         let configuration = RestaurantInfoViewConfiguration(
             name: "Benjamin A Padaria",
             detail: "",
@@ -59,7 +59,7 @@ class RestaurantInfoViewSnapshotTests: XCTestCase {
         
     }
     
-    func test_restaurantInfoView_whenSnapshot_noIcon() throws {
+    func test_restaurantInfoView_whenSnapshot_noIcon() {
         let configuration = RestaurantInfoViewConfiguration(
             name: "Benjamin A Padaria",
             detail: "Padaria • 23-33 min",
@@ -74,7 +74,7 @@ class RestaurantInfoViewSnapshotTests: XCTestCase {
         
     }
     
-    func test_restaurantInfoView_whenSnapshot_longName() throws {
+    func test_restaurantInfoView_whenSnapshot_longName() {
         let configuration = RestaurantInfoViewConfiguration(
             name: "Benjamin A Padaria, só aqui as delícias do trigo",
             detail: "Padaria • 23-33 min",
@@ -89,7 +89,7 @@ class RestaurantInfoViewSnapshotTests: XCTestCase {
         
     }
     
-    func test_restaurantInfoView_whenSnapshot_LongDetail() throws {
+    func test_restaurantInfoView_whenSnapshot_LongDetail() {
         let configuration = RestaurantInfoViewConfiguration(
             name: "Benjamin A Padaria",
             detail: "A melhor Padaria de todo o brasil trazendo as delicias • 23-33 min",
