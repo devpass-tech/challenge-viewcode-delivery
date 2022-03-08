@@ -101,9 +101,5 @@ class RestaurantInfoViewSnapshotTests: XCTestCase {
         restaurantInfoView.updateView(with: configuration)
         
         assertSnapshot(matching: restaurantInfoView, as: .image(size: size), record: isRecord)
-        
     }
-    
-    
-    
 }
