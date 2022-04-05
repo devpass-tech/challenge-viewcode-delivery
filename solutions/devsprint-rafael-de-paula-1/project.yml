@@ -1,0 +1,43 @@
+name: DeliveryApp
+options:
+  bundleIdPrefix: com.devpass
+  deploymentTarget:
+    iOS: 15.0
+  postGenCommand: pod install
+  
+targets:
+  DeliveryApp:
+    type: application
+    platform: iOS
+    sources: 
+      - DeliveryApp
+    scheme:
+      testTargets:
+      - DeliveryAppTests
+
+    info:
+      path: DeliveryApp/Resources/Info.plist
+      properties:
+        UISupportedInterfaceOrientations: []
+        NSAppTransportSecurity: true
+        UILaunchStoryboardName: LaunchScreen
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
+
+  DeliveryAppTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: DeliveryAppTests
+        includes:
+          - "**/*.swift"
+
+    settings:
+      TEST_HOST: "$(BUILT_PRODUCTS_DIR)/DeliveryApp.app/DeliveryApp"
+
+    info:
+      path: DeliveryAppTests/Info.plist

@@ -65,3 +65,9 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+
+## Devpass
+
+# XcodeGen implementation
+solutions/devsprint-rafael-de-paula-1/*.xcodeproj/*
+solutions/devsprint-rafael-de-paula-1/*.xcworkspace/*
