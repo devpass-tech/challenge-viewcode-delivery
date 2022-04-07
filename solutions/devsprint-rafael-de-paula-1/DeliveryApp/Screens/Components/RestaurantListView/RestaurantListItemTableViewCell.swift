@@ -35,8 +35,6 @@ final class RestaurantListItemTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 15)
-        label.text = "Lorem ipsum dolor"
-        label.backgroundColor = .magenta
         
         return label
     }()
@@ -46,8 +44,6 @@ final class RestaurantListItemTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 13)
         label.textColor = .lightGray
-        label.backgroundColor = .yellow
-        label.text = "Lorem ipsum dolor"
         
         return label
     }()
