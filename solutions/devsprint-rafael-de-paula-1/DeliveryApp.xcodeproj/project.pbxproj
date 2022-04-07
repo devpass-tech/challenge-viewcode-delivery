@@ -33,6 +33,7 @@
 		98AF573327ADB16E00339A66 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C4368827ADAEBE00D9048A /* String+Extensions.swift */; };
 		98AF573627ADB34C00339A66 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AF573527ADB34C00339A66 /* DebugViewController.swift */; };
 		F38B063B7FA2ECD527BC711E /* Pods_DeliveryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 160BD4A1C682793F2954AD1D /* Pods_DeliveryApp.framework */; };
+		F642852F27FF6ABD00A463BC /* RestaurantListView in Resources */ = {isa = PBXBuildFile; fileRef = F642852E27FF6ABD00A463BC /* RestaurantListView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		A6B18B6CD0C1E1CC87339AA4 /* Pods-DeliveryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryApp.debug.xcconfig"; path = "Target Support Files/Pods-DeliveryApp/Pods-DeliveryApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BCF8E8ECA72737657CE9C33B /* Pods-DeliveryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryApp.release.xcconfig"; path = "Target Support Files/Pods-DeliveryApp/Pods-DeliveryApp.release.xcconfig"; sourceTree = "<group>"; };
 		D9B092AD3C6626CBAC0B965E /* Pods-DeliveryAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryAppTests.release.xcconfig"; path = "Target Support Files/Pods-DeliveryAppTests/Pods-DeliveryAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		F642852E27FF6ABD00A463BC /* RestaurantListView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RestaurantListView; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +111,6 @@
 				3EDA769CE8E741FD579D2DB6 /* Pods-DeliveryAppTests.debug.xcconfig */,
 				D9B092AD3C6626CBAC0B965E /* Pods-DeliveryAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -270,6 +271,7 @@
 		98F12963272F307100B88A87 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F642852E27FF6ABD00A463BC /* RestaurantListView */,
 				98C4368027ADADC000D9048A /* SampleComponentView.swift */,
 			);
 			path = Components;
@@ -378,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				983271C9272752B50010C63A /* LaunchScreen.storyboard in Resources */,
+				F642852F27FF6ABD00A463BC /* RestaurantListView in Resources */,
 				983271C6272752B50010C63A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
