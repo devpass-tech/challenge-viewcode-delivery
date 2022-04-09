@@ -72,7 +72,7 @@ extension HomeView: UITableViewDataSource {
                 category: restaurant.category,
                 minDeliveryTime: restaurant.deliveryTime.min,
                 maxDeliveryTime: restaurant.deliveryTime.max,
-                icon: "restaurant-logo"
+                icon: restaurant.logo
             )
         )
         return cell

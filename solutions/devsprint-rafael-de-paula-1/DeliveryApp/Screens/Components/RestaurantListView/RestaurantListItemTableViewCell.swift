@@ -85,7 +85,7 @@ final class RestaurantListItemTableViewCell: UITableViewCell {
         nameLabel.text = viewModel.name
         detailLabel.text = .formattedRestaurantInfo(category: viewModel.category, minDeliveryTime: viewModel.minDeliveryTime, maxDeliveryTime: viewModel.maxDeliveryTime)
         
-        if let iconName = viewModel.icon {
+        if let iconName = viewModel.icon, !iconName.isEmpty {
             iconImageView.image = UIImage(named: iconName)
         } else {
             iconImageView.isHidden = true
