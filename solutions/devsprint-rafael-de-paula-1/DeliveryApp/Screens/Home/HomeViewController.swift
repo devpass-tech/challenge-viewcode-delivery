@@ -12,14 +12,12 @@ class HomeViewController: UIViewController {
     private let deliveryApi = DeliveryApi()
 
     private let homeView: HomeView = {
-
         let homeView = HomeView()
         return homeView
     }()
 
     init() {
         super.init(nibName: nil, bundle: nil)
-
         navigationItem.title = "Delivery App"
     }
     
@@ -28,17 +26,14 @@ class HomeViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-
         navigationController?.navigationBar.prefersLargeTitles = true
 
         deliveryApi.fetchRestaurants { restaurants in
-
             guard let restaurants = restaurants else {
                 return
             }
 
             DispatchQueue.main.async {
-
                 self.homeView.updateView(with: restaurants)
             }
         }

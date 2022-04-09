@@ -5,7 +5,8 @@
 		"delivery_time": {
 			"min": 23,
 			"max": 33
-		}
+		},
+		"logo": "restaurant-logo"
 	},
 	{
 		"name": "Pecorino a Trattoria",
@@ -13,7 +14,8 @@
 		"delivery_time": {
 			"min": 38,
 			"max": 48
-		}
+		},
+		"logo": "restaurant-logo"
 	},
 	{
 		"name": "Bar do Alemão",
@@ -21,7 +23,8 @@
 		"delivery_time": {
 			"min": 42,
 			"max": 52
-		}
+		},
+		"logo": "restaurant-logo"
 	},
 	{
 		"name": "Benjamin a Padaria",
@@ -29,7 +32,8 @@
 		"delivery_time": {
 			"min": 23,
 			"max": 33
-		}
+		},
+		"logo": "restaurant-logo"
 	},
 	{
 		"name": "Abbraccio",
@@ -37,7 +41,8 @@
 		"delivery_time": {
 			"min": 65,
 			"max": 75
-		}
+		},
+		"logo": "restaurant-logo"
 	},
 	{
 		"name": "Poke Garden",
@@ -45,7 +50,8 @@
 		"delivery_time": {
 			"min": 36,
 			"max": 46
-		}
+		},
+		"logo": "restaurant-logo"
 	},
 	{
 		"name": "Bar do Juarez",
@@ -61,7 +67,8 @@
 		"delivery_time": {
 			"min": 28,
 			"max": 38
-		}
+		},
+		"logo": "restaurant-logo"
 	},
 	{
 		"name": "1900 Pizzeria",
@@ -69,7 +76,8 @@
 		"delivery_time": {
 			"min": 45,
 			"max": 55
-		}
+		},
+		"logo": "restaurant-logo"
 	},
 	{
 		"name": "Estella Burger",
@@ -77,7 +85,8 @@
 		"delivery_time": {
 			"min": 17,
 			"max": 27
-		}
+		},
+		"logo": "restaurant-logo"
 	},
 	{
 		"name": "Tacomex",
@@ -85,6 +94,7 @@
 		"delivery_time": {
 			"min": 17,
 			"max": 27
-		}
+		},
+		"logo": "restaurant-logo"
 	}
 ]
