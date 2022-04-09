@@ -7,19 +7,10 @@
 
 import UIKit
 
-struct HomeViewConfiguration {
-
-    let restaurants: [String]
-}
-
 final class HomeView: UIView {
-
-    private let restaurantCellIdentifier = "RestaurantCellIdentifier"
-
     private var restaurants: [Restaurant] = []
 
     private lazy var tableView: UITableView = {
-
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.restaurantCellIdentifier)
@@ -28,9 +19,7 @@ final class HomeView: UIView {
     }()
 
     init() {
-
         super.init(frame: .zero)
-
         self.setupViews()
     }
 
@@ -39,7 +28,6 @@ final class HomeView: UIView {
     }
 
     func updateView(with restaurants: [Restaurant]) {
-
         self.restaurants = restaurants
         self.tableView.reloadData()
     }
@@ -48,22 +36,17 @@ final class HomeView: UIView {
 private extension HomeView {
 
     func setupViews() {
-
         self.backgroundColor = .white
-
         self.configureSubviews()
         self.configureSubviewsConstraints()
     }
 
     func configureSubviews() {
-
         self.addSubview(self.tableView)
     }
 
     func configureSubviewsConstraints() {
-
         NSLayoutConstraint.activate([
-
             self.tableView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
             self.tableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
@@ -73,9 +56,7 @@ private extension HomeView {
 }
 
 extension HomeView: UITableViewDataSource {
-
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return self.restaurants.count
     }
 
@@ -86,6 +67,3 @@ extension HomeView: UITableViewDataSource {
         return cell
     }
 }
-
-
-
