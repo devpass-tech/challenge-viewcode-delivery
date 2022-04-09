@@ -13,7 +13,7 @@ final class HomeView: UIView {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.restaurantCellIdentifier)
+        tableView.register(RestaurantListItemTableViewCell.self, forCellReuseIdentifier: RestaurantListItemTableViewCell.identifier)
         tableView.dataSource = self
         return tableView
     }()
@@ -50,20 +50,31 @@ private extension HomeView {
             self.tableView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
             self.tableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
+            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 }
 
 extension HomeView: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.restaurants.count
+        return restaurants.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.restaurantCellIdentifier)!
-        cell.textLabel?.text = self.restaurants[indexPath.row].name
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantListItemTableViewCell.identifier) as? RestaurantListItemTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        let restaurant = restaurants[indexPath.row]
+        cell.configure(
+            with: .init(
+                name: restaurant.name,
+                category: restaurant.category,
+                minDeliveryTime: restaurant.deliveryTime.min,
+                maxDeliveryTime: restaurant.deliveryTime.max,
+                icon: "restaurant-logo"
+            )
+        )
         return cell
     }
 }
