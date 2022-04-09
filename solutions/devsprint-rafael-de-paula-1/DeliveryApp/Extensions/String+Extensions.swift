@@ -11,6 +11,6 @@ extension String {
 
     static func formattedRestaurantInfo(category: String, minDeliveryTime: Int, maxDeliveryTime: Int) -> String {
 
-        return "\(category) • \(minDeliveryTime)-\(minDeliveryTime) min"
+        return "\(category) • \(minDeliveryTime)-\(maxDeliveryTime) min"
     }
 }
