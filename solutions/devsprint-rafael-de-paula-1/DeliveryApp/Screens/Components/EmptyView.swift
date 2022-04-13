@@ -11,7 +11,7 @@ class EmptyView: UIView {
 
     private enum DefaultTexts {
         static let titleLabel = "Endereço não encontrado"
-        static let subTitleLabel = "Procure por ruas com número e bairro \n utilizando o campo de busca"
+        static let subTitleLabel = "Procure por ruas com número e bairro utilizando o campo de busca"
     }
     
     // MARK: UI Components
@@ -46,7 +46,7 @@ class EmptyView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .gray
         label.textAlignment = .center
-        label.numberOfLines = 2
+        label.numberOfLines = 0
         
         return label
     }()
@@ -66,12 +66,18 @@ class EmptyView: UIView {
 extension EmptyView: ViewCode {
     func setupComponents() {
         self.addSubview(stackView)
+        stackView.addSubview(subtitleLabel)
     }
     
     func setupConstraints() {        
         NSLayoutConstraint.activate([
             stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            subtitleLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            subtitleLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
         ])
     }
 }
