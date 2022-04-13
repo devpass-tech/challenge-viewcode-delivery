@@ -11,7 +11,7 @@ struct DeliveryApi {
 
     func fetchRestaurants(_ completion: @escaping ([Restaurant]?) -> Void) {
 
-        let url = URL(string: "https://raw.githubusercontent.com/devpass-tech/challenge-delivery-app/main/api/home_restaurant_list.json")!
+        let url = URL(string: "https://raw.githubusercontent.com/devpass-tech/challenge-viewcode-delivery/main/api/home_restaurant_list.json")!
 
         let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
 
@@ -41,7 +41,7 @@ struct DeliveryApi {
 
     func searchAddresses(_ completion: @escaping ([Address]?) -> Void) {
 
-        let url = URL(string: "https://raw.githubusercontent.com/devpass-tech/challenge-delivery-app/main/api/address_search_results.json")!
+        let url = URL(string: "https://raw.githubusercontent.com/devpass-tech/challenge-viewcode-delivery/main/api/address_search_results.json")!
 
         let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
 
@@ -71,7 +71,7 @@ struct DeliveryApi {
 
     func fetchRestaurantDetails(_ completion: @escaping (RestaurantDetails?) -> Void) {
 
-        let url = URL(string: "https://raw.githubusercontent.com/devpass-tech/challenge-delivery-app/main/api/restaurant_details.json")!
+        let url = URL(string: "https://raw.githubusercontent.com/devpass-tech/challenge-viewcode-delivery/main/api/restaurant_details.json")!
 
         let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
 
