@@ -72,9 +72,7 @@ final class RestaurantListItemTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        setupComponents()
-        setupConstraints()
-        setupExtraConfiguration()
+        setupViewCode()
     }
     
     required init?(coder: NSCoder) {
@@ -93,26 +91,19 @@ final class RestaurantListItemTableViewCell: UITableViewCell {
     }
 }
 
-extension RestaurantListItemTableViewCell {
-    private func setupComponents() {
+extension RestaurantListItemTableViewCell: ViewCode {
+    func setupComponents() {
         contentView.addSubview(horizontalStackView)
     }
     
-    private func setupConstraints() {
+    func setupConstraints() {
         contentView.subviews.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
         
-        setupIconImageViewConstraints()
-        setupStackViewConstraints()
-    }
-    
-    private func setupIconImageViewConstraints() {
         NSLayoutConstraint.activate([
             iconImageView.heightAnchor.constraint(equalToConstant: Configuration.imageSize),
             iconImageView.widthAnchor.constraint(equalToConstant: Configuration.imageSize)
         ])
-    }
-    
-    private func setupStackViewConstraints() {
+        
         NSLayoutConstraint.activate([
             horizontalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Configuration.horizontalMargin),
             horizontalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Configuration.horizontalMargin),
@@ -121,7 +112,7 @@ extension RestaurantListItemTableViewCell {
         ])
     }
     
-    private func setupExtraConfiguration() {
+    func setupExtraConfiguration() {
         backgroundColor = .white
         accessoryType = .disclosureIndicator
     }

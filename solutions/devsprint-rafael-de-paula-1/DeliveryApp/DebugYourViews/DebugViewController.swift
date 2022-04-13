@@ -19,30 +19,23 @@ import UIKit
 
 class DebugViewController: UIViewController {
 
-    private let myView: UIView = {
-
-        let view = UIView()
+    private let emptyView: EmptyView = {
+        let view = EmptyView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
+        
         return view
     }()
 
-    private let myViewHeight: CGFloat = 100
-
     init() {
         super.init(nibName: nil, bundle: nil)
-
-        view.backgroundColor = .white
-
-        view.addSubview(myView)
+        view.addSubview(emptyView)
 
         NSLayoutConstraint.activate([
-
-            myView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            myView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            myView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            myView.heightAnchor.constraint(equalToConstant: myViewHeight),
-
+            emptyView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            emptyView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            emptyView.topAnchor.constraint(equalTo: view.topAnchor),
+            emptyView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 
