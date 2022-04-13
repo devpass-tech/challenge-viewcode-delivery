@@ -15,6 +15,13 @@ class HomeViewController: UIViewController {
         let homeView = HomeView()
         return homeView
     }()
+    
+    private lazy var searchController: UISearchController = {
+        let searchController = UISearchController()
+        searchController.searchBar.placeholder = "Nome do restaurante"
+        
+        return searchController
+    }()
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -27,7 +34,15 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         navigationController?.navigationBar.prefersLargeTitles = true
-
+        navigationItem.searchController = searchController
+        fetchRestaurantes()
+    }
+    
+    override func loadView() {
+        self.view = homeView
+    }
+    
+    func fetchRestaurantes() {
         deliveryApi.fetchRestaurants { restaurants in
             guard let restaurants = restaurants else {
                 return
@@ -37,9 +52,5 @@ class HomeViewController: UIViewController {
                 self.homeView.updateView(with: restaurants)
             }
         }
-    }
-    
-    override func loadView() {
-        self.view = homeView
     }
 }
