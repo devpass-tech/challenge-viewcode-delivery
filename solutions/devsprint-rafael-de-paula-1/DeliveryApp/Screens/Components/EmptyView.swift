@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EmptyView: UIView {
+final class EmptyView: UIView {
 
     private enum DefaultTexts {
         static let titleLabel = "Endereço não encontrado"
@@ -77,3 +77,13 @@ extension EmptyView: ViewCode {
         ])
     }
 }
+
+#if DEBUG
+import SwiftUI
+
+struct EmptyView_Preview: PreviewProvider {
+    static var previews: some View {
+        EmptyView().showPreview()
+    }
+}
+#endif

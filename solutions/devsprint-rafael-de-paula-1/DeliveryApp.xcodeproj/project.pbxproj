@@ -24,6 +24,8 @@
 		69D31C9E28076A73009B02CA /* CategoryItemCollectionViewCellSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D31C9D28076A73009B02CA /* CategoryItemCollectionViewCellSnapshotTests.swift */; };
 		69D31CA028076C3E009B02CA /* CategoryCarouselTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D31C9F28076C3E009B02CA /* CategoryCarouselTableViewCell.swift */; };
 		69D31CA228088C49009B02CA /* SeparatorLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D31CA128088C49009B02CA /* SeparatorLineTableViewCell.swift */; };
+		69D31CA4280895BA009B02CA /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D31CA3280895BA009B02CA /* UIView+Extensions.swift */; };
+		69D31CA628089665009B02CA /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D31CA528089665009B02CA /* UIViewController+Extensions.swift */; };
 		7141E7C89DBE44E0A62CC1D0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A063A87CD0AD580FAD73C96 /* String+Extensions.swift */; };
 		742337EDE77E85114BAC9E85 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D53954CAAA6939A5F6FD9D /* MenuItemView.swift */; };
 		876C205298F3FD40E6745563 /* HomeViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5E7FAB0DA77EA09943A31E /* HomeViewSnapshotTests.swift */; };
@@ -65,6 +67,8 @@
 		69D31C9D28076A73009B02CA /* CategoryItemCollectionViewCellSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemCollectionViewCellSnapshotTests.swift; sourceTree = "<group>"; };
 		69D31C9F28076C3E009B02CA /* CategoryCarouselTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCarouselTableViewCell.swift; sourceTree = "<group>"; };
 		69D31CA128088C49009B02CA /* SeparatorLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorLineTableViewCell.swift; sourceTree = "<group>"; };
+		69D31CA3280895BA009B02CA /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		69D31CA528089665009B02CA /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		6CF1C64AFEDEABB1B74D449B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		74EE0AE75090A482AF87444A /* DeliveryAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAppTests.swift; sourceTree = "<group>"; };
 		7971E7020BBD5644842191DD /* Pods-DeliveryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryApp.release.xcconfig"; path = "Target Support Files/Pods-DeliveryApp/Pods-DeliveryApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -276,6 +280,8 @@
 			isa = PBXGroup;
 			children = (
 				5A063A87CD0AD580FAD73C96 /* String+Extensions.swift */,
+				69D31CA3280895BA009B02CA /* UIView+Extensions.swift */,
+				69D31CA528089665009B02CA /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -502,6 +508,7 @@
 				EE89F87B9B10B1971D03DC4E /* MenuItemViewController.swift in Sources */,
 				031E56C3C98F1ABEF07BC135 /* Restaurant.swift in Sources */,
 				359FA3D03548CEE255D6C425 /* RestaurantDetails.swift in Sources */,
+				69D31CA4280895BA009B02CA /* UIView+Extensions.swift in Sources */,
 				D48DEA1EDC4CC8A5CC46541F /* RestaurantDetailsView.swift in Sources */,
 				CD02B16590C6FAA9467F6C46 /* RestaurantDetailsViewController.swift in Sources */,
 				41621C7BE3A3D88908857236 /* RestaurantListItemTableViewCell.swift in Sources */,
@@ -515,6 +522,7 @@
 				7141E7C89DBE44E0A62CC1D0 /* String+Extensions.swift in Sources */,
 				BEC96BC61BF1F740550B943D /* ViewCode.swift in Sources */,
 				69D31CA028076C3E009B02CA /* CategoryCarouselTableViewCell.swift in Sources */,
+				69D31CA628089665009B02CA /* UIViewController+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
