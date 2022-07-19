@@ -9,7 +9,7 @@ import Foundation
 
 protocol ViewCode {
     func setupSubviews()
-    func setupConstraint()
+    func setupConstraints()
     func setupExtraConfiguration()
     func setup()
 }
@@ -17,7 +17,7 @@ protocol ViewCode {
 extension ViewCode {
     func setup() {
         setupSubviews()
-        setupConstraint()
+        setupConstraints()
         setupExtraConfiguration()
     }
     
