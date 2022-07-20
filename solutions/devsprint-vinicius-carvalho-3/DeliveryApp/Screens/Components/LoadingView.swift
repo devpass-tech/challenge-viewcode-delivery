@@ -11,7 +11,7 @@ final class LoadingView: UIView {
     private lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = "Buscanado endereços..."
+        titleLabel.text = "Buscando endereços..."
         titleLabel.font = .systemFont(ofSize: 17, weight: .bold)
         titleLabel.tintColor = .black
         return titleLabel
@@ -46,7 +46,7 @@ extension LoadingView: ViewCode {
     
     private func setupTitleLabelConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.bottomAnchor.constraint(equalTo: centerYAnchor, constant: -10),
+            titleLabel.bottomAnchor.constraint(equalTo: centerYAnchor),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }
