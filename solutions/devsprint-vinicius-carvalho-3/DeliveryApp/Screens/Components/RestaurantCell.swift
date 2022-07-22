@@ -9,6 +9,11 @@ import Foundation
 import UIKit
 
 class RestaurantCell: UITableViewCell {
+    private struct Configurations {
+        static let imageSize: CGSize = .init(width: 56, height: 56)
+        static let stackViewSpacing: CGFloat = 8
+    }
+    
     private lazy var stackViewCell: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -71,18 +76,7 @@ class RestaurantCell: UITableViewCell {
 }
 
 extension RestaurantCell: ViewCode {
-    private struct Configurations {
-        static let imageSize: CGSize = .init(width: 56, height: 56)
-        static let stackViewSpacing: CGFloat = 8
-    }
-    
     func setupSubviews() {
-        stackViewText.addArrangedSubview(title)
-        stackViewText.addArrangedSubview(subtitle)
-        
-        stackViewCell.addArrangedSubview(image)
-        stackViewCell.addArrangedSubview(stackViewText)
-        
         contentView.addSubview(stackViewCell)
     }
     
