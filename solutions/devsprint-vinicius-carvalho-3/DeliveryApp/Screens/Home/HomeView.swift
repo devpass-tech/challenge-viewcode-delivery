@@ -28,7 +28,7 @@ final class HomeView: UIView {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: restaurantCellIdentifier)
+        tableView.register(RestaurantCell.self, forCellReuseIdentifier: self.restaurantCellIdentifier)
         tableView.dataSource = self
         return tableView
     }()
@@ -85,11 +85,11 @@ extension HomeView: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: restaurantCellIdentifier)!
-        cell.textLabel?.text = restaurants[indexPath.row].name
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.restaurantCellIdentifier) as? RestaurantCell else {
+            return UITableViewCell()
+        }
+        cell.updateCell(with: restaurants[indexPath.row])
+        
         return cell
     }
 }
-
-
-
