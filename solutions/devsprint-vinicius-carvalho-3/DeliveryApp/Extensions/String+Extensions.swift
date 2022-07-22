@@ -13,4 +13,13 @@ extension String {
 
         return "\(category) • \(minDeliveryTime)-\(minDeliveryTime) min"
     }
+    
+    static func currencyValue(value: Int) -> String {
+        
+        let formatterNumber = NumberFormatter()
+        formatterNumber.locale = Locale.current
+        formatterNumber.numberStyle = .currency
+        
+        return formatterNumber.string(from: NSNumber(value: value))!
+    }
 }
