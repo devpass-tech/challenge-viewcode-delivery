@@ -18,17 +18,16 @@ final class MenuItemCell: UIView {
     }
     
     private lazy var wrapperItemStackView: UIStackView = {
-        let wrapperItemStackView = UIStackView()
+        let wrapperItemStackView = UIStackView(arrangedSubviews: [descriptionItemStackView, productImage])
         wrapperItemStackView.alignment = .center
         wrapperItemStackView.translatesAutoresizingMaskIntoConstraints = false
         return wrapperItemStackView
     }()
     
     private lazy var descriptionItemStackView: UIStackView = {
-        let descriptionItemStackView = UIStackView()
+        let descriptionItemStackView = UIStackView(arrangedSubviews: [nameLabel, priceLabel])
         descriptionItemStackView.axis = .vertical
         descriptionItemStackView.spacing = 5
-        descriptionItemStackView.translatesAutoresizingMaskIntoConstraints = false
         return descriptionItemStackView
     }()
     
@@ -37,23 +36,19 @@ final class MenuItemCell: UIView {
         nameLabel.text = "Title"
         nameLabel.font = .systemFont(ofSize: 15, weight: .medium)
         nameLabel.tintColor = .black
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
         return nameLabel
     }()
-    
     
     private lazy var priceLabel: UILabel = {
         let priceLabel = UILabel()
         priceLabel.text = "0"
         priceLabel.font = .systemFont(ofSize: 13, weight: .regular)
         priceLabel.tintColor = .gray
-        priceLabel.translatesAutoresizingMaskIntoConstraints = false
         return priceLabel
     }()
     
     private lazy var productImage: UIImageView = {
         let productImage = UIImageView()
-        productImage.translatesAutoresizingMaskIntoConstraints = false
         productImage.clipsToBounds = true
         productImage.contentMode = .scaleAspectFill
         productImage.layer.cornerRadius = 10
@@ -67,17 +62,9 @@ final class MenuItemCell: UIView {
     
 }
 
-
 extension MenuItemCell: ViewCode {
     
     func setupSubviews() {
-        
-        descriptionItemStackView.addArrangedSubview(nameLabel)
-        descriptionItemStackView.addArrangedSubview(priceLabel)
-        
-        wrapperItemStackView.addArrangedSubview(descriptionItemStackView)
-        wrapperItemStackView.addArrangedSubview(productImage)
-        
         addSubview(wrapperItemStackView)
     }
     
