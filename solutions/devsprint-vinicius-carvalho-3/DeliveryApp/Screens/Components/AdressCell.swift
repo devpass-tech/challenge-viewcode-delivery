@@ -21,7 +21,6 @@ final class AddressCell: UITableViewCell {
     
     private lazy var addressLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 17, weight: .bold)
         label.textColor = .black
         return label
@@ -29,7 +28,6 @@ final class AddressCell: UITableViewCell {
     
     private lazy var neighborhoodLabel: UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 14)
         label.textColor = .lightGray
         return label
@@ -63,6 +61,7 @@ extension AddressCell: ViewCode {
         NSLayoutConstraint.activate([
             container.topAnchor.constraint(equalTo: topAnchor, constant: 12),
             container.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            container.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             container.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12)
         ])
     }
