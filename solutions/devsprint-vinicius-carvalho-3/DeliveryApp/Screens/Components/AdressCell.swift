@@ -61,7 +61,7 @@ extension AddressCell: ViewCode {
         NSLayoutConstraint.activate([
             container.topAnchor.constraint(equalTo: topAnchor, constant: 12),
             container.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            container.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            container.trailingAnchor.constraint(equalTo: trailingAnchor),
             container.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12)
         ])
     }
