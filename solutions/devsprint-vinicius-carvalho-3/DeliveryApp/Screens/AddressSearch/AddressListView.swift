@@ -16,6 +16,7 @@ class AddressListView: UIView {
     private lazy var searchbar: UISearchBar = {
         let input = UISearchBar()
         input.translatesAutoresizingMaskIntoConstraints = false
+        input.placeholder = "Rua, número, bairro"
         input.layer.borderWidth = 10
         input.layer.borderColor = UIColor.secondarySystemBackground.cgColor
         input.barTintColor = .secondarySystemBackground
