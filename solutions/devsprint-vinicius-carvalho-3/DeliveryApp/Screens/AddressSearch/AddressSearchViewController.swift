@@ -8,7 +8,8 @@
 import UIKit
 
 class AddressSearchViewController: UIViewController {
-
+    
+    
     private let deliveryApi = DeliveryApi()
 
     private let addressListView: AddressListView = {
@@ -19,7 +20,6 @@ class AddressSearchViewController: UIViewController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
-
     }
 
     required init?(coder: NSCoder) {
@@ -31,7 +31,14 @@ class AddressSearchViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-
+        view.backgroundColor = .white
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Address"
+        navigationController?.navigationBar.backgroundColor = .secondarySystemBackground
+        
+        tabBarController?.tabBar.tintColor = .secondarySystemFill
+        
         deliveryApi.searchAddresses { addresses in
 
             guard let addresses = addresses else {
