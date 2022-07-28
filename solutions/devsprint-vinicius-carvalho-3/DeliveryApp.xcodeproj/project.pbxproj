@@ -33,11 +33,12 @@
 		98AF573227ADB16E00339A66 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C4368627ADAEA500D9048A /* Restaurant.swift */; };
 		98AF573327ADB16E00339A66 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C4368827ADAEBE00D9048A /* String+Extensions.swift */; };
 		98AF573627ADB34C00339A66 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AF573527ADB34C00339A66 /* DebugViewController.swift */; };
-		F449E4A628886B9000855201 /* AdressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F449E4A528886B9000855201 /* AdressCell.swift */; };
+		BB728CE428933D33002E6D4C /* RestaurantInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB728CE328933D33002E6D4C /* RestaurantInfoView.swift */; };
 		EE29C39B288F7613000DDB2D /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE29C399288F7613000DDB2D /* AddressView.swift */; };
 		EE29C39C288F7613000DDB2D /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE29C39A288F7613000DDB2D /* MenuItemCell.swift */; };
 		EE5EF4DC2888DBD200B5553C /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5EF4DB2888DBD200B5553C /* RestaurantCell.swift */; };
 		EED63CA3288B637C00CB4610 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED63CA2288B637C00CB4610 /* EmptyView.swift */; };
+		F449E4A628886B9000855201 /* AdressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F449E4A528886B9000855201 /* AdressCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,11 +81,12 @@
 		98F1297C272F51DE00B88A87 /* MenuItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewController.swift; sourceTree = "<group>"; };
 		98FC5AAA2732B938002412EA /* RestaurantDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsView.swift; sourceTree = "<group>"; };
 		98FC5AB72732C1EF002412EA /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
-		F449E4A528886B9000855201 /* AdressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressCell.swift; sourceTree = "<group>"; };
+		BB728CE328933D33002E6D4C /* RestaurantInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantInfoView.swift; sourceTree = "<group>"; };
 		EE29C399288F7613000DDB2D /* AddressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		EE29C39A288F7613000DDB2D /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		EE5EF4DB2888DBD200B5553C /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		EED63CA2288B637C00CB4610 /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		F449E4A528886B9000855201 /* AdressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,8 +267,8 @@
 				EED63CA2288B637C00CB4610 /* EmptyView.swift */,
 				98C4368027ADADC000D9048A /* SampleComponentView.swift */,
 				1E2324E4288720CA00414138 /* LoadingView.swift */,
+				BB728CE328933D33002E6D4C /* RestaurantInfoView.swift */,
 				F449E4A528886B9000855201 /* AdressCell.swift */,
-                8B113972288865DE00A42625 /* EmptyView.swift */,
 				EE5EF4DB2888DBD200B5553C /* RestaurantCell.swift */,
 			);
 			path = Components;
@@ -390,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB728CE428933D33002E6D4C /* RestaurantInfoView.swift in Sources */,
 				EE5EF4DC2888DBD200B5553C /* RestaurantCell.swift in Sources */,
 				98AF572227ADB16E00339A66 /* AppDelegate.swift in Sources */,
 				98AF573627ADB34C00339A66 /* DebugViewController.swift in Sources */,
