@@ -310,7 +310,6 @@
 				983271B5272752AF0010C63A /* Sources */,
 				983271B6272752AF0010C63A /* Frameworks */,
 				983271B7272752AF0010C63A /* Resources */,
-				6B3214D6D171ACB5F6E5BC0F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -329,6 +328,7 @@
 				983271CB272752B50010C63A /* Sources */,
 				983271CC272752B50010C63A /* Frameworks */,
 				983271CD272752B50010C63A /* Resources */,
+				6CBE2A9A2F22A1B80ED79331 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -398,21 +398,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6B3214D6D171ACB5F6E5BC0F /* [CP] Embed Pods Frameworks */ = {
+		6CBE2A9A2F22A1B80ED79331 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DeliveryApp/Pods-DeliveryApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DeliveryAppTests/Pods-DeliveryAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DeliveryApp/Pods-DeliveryApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-DeliveryAppTests/Pods-DeliveryAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeliveryApp/Pods-DeliveryApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeliveryAppTests/Pods-DeliveryAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D102E7CC2EAADA786D153D08 /* [CP] Check Pods Manifest.lock */ = {
