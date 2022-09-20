@@ -1,0 +1,13 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'DeliveryApp' do
+  use_frameworks!
+
+  target 'DeliveryAppTests' do
+    inherit! :search_paths
+    
+    pod 'SnapshotTesting', '~> 1.9.0'
+  end
+
+end
