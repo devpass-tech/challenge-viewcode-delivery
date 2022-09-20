@@ -27,3 +27,9 @@ extension ViewCodeProtocol where Self: UIView {
         views.forEach(addSubview)
     }
 }
+
+extension ViewCodeProtocol where Self: UIStackView {
+    func addArrangedSubviews(_ views: [UIView]) {
+        views.forEach(addArrangedSubview)
+    }
+}
