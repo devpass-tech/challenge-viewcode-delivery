@@ -48,6 +48,7 @@ final class EmptyView: UIView {
 extension EmptyView: ViewCodeProtocol{
 
     func configViews() {
+        backgroundColor = .white
         translatesAutoresizingMaskIntoConstraints = false
     }
 

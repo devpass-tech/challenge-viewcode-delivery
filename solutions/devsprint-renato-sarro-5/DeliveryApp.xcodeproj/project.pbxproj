@@ -11,11 +11,11 @@
 		63FF52CB15549064843C73DF /* Pods_DeliveryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0448F42AD61170E17D9F1810 /* Pods_DeliveryApp.framework */; };
 		876C15CE28D918780016A88E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C15CD28D918780016A88E /* LoadingView.swift */; };
 		876C15D028D91B6E0016A88E /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C15CF28D91B6E0016A88E /* ViewCodeProtocol.swift */; };
+		87A4892028DA697A00ADF3D7 /* EmptyViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A4891F28DA697A00ADF3D7 /* EmptyViewSpec.swift */; };
 		98228D7D27BC489F006A38BB /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98228D7C27BC489F006A38BB /* Address.swift */; };
 		98228D7F27BC490E006A38BB /* RestaurantDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98228D7E27BC490E006A38BB /* RestaurantDetails.swift */; };
 		983271C6272752B50010C63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983271C5272752B50010C63A /* Assets.xcassets */; };
 		983271C9272752B50010C63A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983271C7272752B50010C63A /* LaunchScreen.storyboard */; };
-		983271D4272752B50010C63A /* DeliveryAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983271D3272752B50010C63A /* DeliveryAppTests.swift */; };
 		98AF572227ADB16E00339A66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983271BC272752AF0010C63A /* AppDelegate.swift */; };
 		98AF572327ADB16E00339A66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983271BE272752AF0010C63A /* SceneDelegate.swift */; };
 		98AF572427ADB16E00339A66 /* SampleComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C4368027ADADC000D9048A /* SampleComponentView.swift */; };
@@ -56,6 +56,8 @@
 		811AB034AC0ED48496D3A4D8 /* Pods-DeliveryAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryAppTests.release.xcconfig"; path = "Target Support Files/Pods-DeliveryAppTests/Pods-DeliveryAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		876C15CD28D918780016A88E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		876C15CF28D91B6E0016A88E /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
+		87A4891E28DA697A00ADF3D7 /* DeliveryAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeliveryAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		87A4891F28DA697A00ADF3D7 /* EmptyViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewSpec.swift; sourceTree = "<group>"; };
 		98228D7C27BC489F006A38BB /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		98228D7E27BC490E006A38BB /* RestaurantDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetails.swift; sourceTree = "<group>"; };
 		983271B9272752AF0010C63A /* DeliveryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliveryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +68,6 @@
 		983271C8272752B50010C63A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		983271CA272752B50010C63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		983271CF272752B50010C63A /* DeliveryAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeliveryAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		983271D3272752B50010C63A /* DeliveryAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAppTests.swift; sourceTree = "<group>"; };
 		98612706272F56AB0049403C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		98AF573527ADB34C00339A66 /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		98C4368027ADADC000D9048A /* SampleComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleComponentView.swift; sourceTree = "<group>"; };
@@ -107,6 +108,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87A4891C28DA695600ADF3D7 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				87A4891D28DA695F00ADF3D7 /* Components */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		87A4891D28DA695F00ADF3D7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				87A4891F28DA697A00ADF3D7 /* EmptyViewSpec.swift */,
+				87A4891E28DA697A00ADF3D7 /* DeliveryAppTests-Bridging-Header.h */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		983271B0272752AF0010C63A = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +162,7 @@
 		983271D2272752B50010C63A /* DeliveryAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				983271D3272752B50010C63A /* DeliveryAppTests.swift */,
+				87A4891C28DA695600ADF3D7 /* Screens */,
 			);
 			path = DeliveryAppTests;
 			sourceTree = "<group>";
@@ -357,6 +375,7 @@
 					};
 					983271CE272752B50010C63A = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1400;
 						TestTargetID = 983271B8272752AF0010C63A;
 					};
 				};
@@ -499,7 +518,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				983271D4272752B50010C63A /* DeliveryAppTests.swift in Sources */,
+				87A4892028DA697A00ADF3D7 /* EmptyViewSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +724,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B8F644M47X;
@@ -719,6 +739,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.devpass.DeliveryAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "DeliveryAppTests/Screens/Components/DeliveryAppTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeliveryApp.app/DeliveryApp";
@@ -731,6 +753,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B8F644M47X;
@@ -745,6 +768,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.devpass.DeliveryAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "DeliveryAppTests/Screens/Components/DeliveryAppTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeliveryApp.app/DeliveryApp";
