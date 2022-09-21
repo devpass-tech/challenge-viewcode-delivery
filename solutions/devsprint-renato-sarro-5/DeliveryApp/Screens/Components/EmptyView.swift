@@ -10,21 +10,16 @@ import UIKit
 final class EmptyView: UIView {
 
     private lazy var labelTitle: UILabel = {
-        let label = UILabel()
+        let label = UILabel.build(style: .callout, alignment: .center)
         label.text = "Endereço não encontrado"
-        label.font = UIFont.boldSystemFont(ofSize: 17)
         label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
     }()
 
     private lazy var labelSubtitle: UILabel = {
-        let label = UILabel()
+        let label = UILabel.build(style: .footnote, alignment: .center)
         label.text = "Procure por ruas com números e bairro utilizando o campo de busca"
-        label.textColor = UIColor.gray
-        label.font = UIFont.systemFont(ofSize: 13)
-        label.textAlignment = .center
-        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
 
         return label

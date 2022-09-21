@@ -21,10 +21,8 @@ final class CategoryCell: UIView {
     }()
 
     private lazy var labelCategory: UILabel = {
-        let label = UILabel()
+        let label = UILabel.build(style: .captionOne)
         label.text = "Mercado"
-        label.font = UIFont(name: "SFProText-Regular", size: 12)
-        label.textColor = UIColor(red: 60/255, green: 60/255, blue: 67/255, alpha: 0.6)
         label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
