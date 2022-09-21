@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3AEC4CC428DA671500733231 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC4CC328DA671500733231 /* EmptyView.swift */; };
+		3AEC4CC628DA839E00733231 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC4CC528DA839E00733231 /* CategoryCell.swift */; };
+		3AEC4CC828DA8E8900733231 /* CategoryCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC4CC728DA8E8900733231 /* CategoryCellSpec.swift */; };
 		63FF52CB15549064843C73DF /* Pods_DeliveryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0448F42AD61170E17D9F1810 /* Pods_DeliveryApp.framework */; };
 		876C15CE28D918780016A88E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C15CD28D918780016A88E /* LoadingView.swift */; };
 		876C15D028D91B6E0016A88E /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C15CF28D91B6E0016A88E /* ViewCodeProtocol.swift */; };
@@ -52,6 +54,8 @@
 		0448F42AD61170E17D9F1810 /* Pods_DeliveryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28732BDCBF9CB8F20D976BA6 /* Pods-DeliveryAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryAppTests.debug.xcconfig"; path = "Target Support Files/Pods-DeliveryAppTests/Pods-DeliveryAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3AEC4CC328DA671500733231 /* EmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		3AEC4CC528DA839E00733231 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		3AEC4CC728DA8E8900733231 /* CategoryCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellSpec.swift; sourceTree = "<group>"; };
 		53D70E9C975A30B7F20A3F8D /* Pods_DeliveryAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		811AB034AC0ED48496D3A4D8 /* Pods-DeliveryAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryAppTests.release.xcconfig"; path = "Target Support Files/Pods-DeliveryAppTests/Pods-DeliveryAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		876C15CD28D918780016A88E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 			children = (
 				87A4891F28DA697A00ADF3D7 /* EmptyViewSpec.swift */,
 				87A4891E28DA697A00ADF3D7 /* DeliveryAppTests-Bridging-Header.h */,
+				3AEC4CC728DA8E8900733231 /* CategoryCellSpec.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 				98C4368027ADADC000D9048A /* SampleComponentView.swift */,
 				876C15CD28D918780016A88E /* LoadingView.swift */,
 				876C15CF28D91B6E0016A88E /* ViewCodeProtocol.swift */,
+				3AEC4CC528DA839E00733231 /* CategoryCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -491,6 +497,7 @@
 				98AF573627ADB34C00339A66 /* DebugViewController.swift in Sources */,
 				98AF572327ADB16E00339A66 /* SceneDelegate.swift in Sources */,
 				876C15CE28D918780016A88E /* LoadingView.swift in Sources */,
+				3AEC4CC628DA839E00733231 /* CategoryCell.swift in Sources */,
 				3AEC4CC428DA671500733231 /* EmptyView.swift in Sources */,
 				98AF572427ADB16E00339A66 /* SampleComponentView.swift in Sources */,
 				98AF572527ADB16E00339A66 /* HomeViewController.swift in Sources */,
@@ -518,6 +525,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AEC4CC828DA8E8900733231 /* CategoryCellSpec.swift in Sources */,
 				87A4892028DA697A00ADF3D7 /* EmptyViewSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
