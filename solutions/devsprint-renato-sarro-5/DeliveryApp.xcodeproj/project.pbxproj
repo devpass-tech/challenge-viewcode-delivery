@@ -11,8 +11,10 @@
 		3AEC4CC628DA839E00733231 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC4CC528DA839E00733231 /* CategoryCell.swift */; };
 		3AEC4CC828DA8E8900733231 /* CategoryCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEC4CC728DA8E8900733231 /* CategoryCellSpec.swift */; };
 		63FF52CB15549064843C73DF /* Pods_DeliveryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0448F42AD61170E17D9F1810 /* Pods_DeliveryApp.framework */; };
+		872B627128DBB68700ED791F /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872B627028DBB68700ED791F /* Label.swift */; };
 		876C15CE28D918780016A88E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C15CD28D918780016A88E /* LoadingView.swift */; };
 		876C15D028D91B6E0016A88E /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876C15CF28D91B6E0016A88E /* ViewCodeProtocol.swift */; };
+		8785338928DBC16100C75C4E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785338828DBC16100C75C4E /* Color.swift */; };
 		87A4892028DA697A00ADF3D7 /* EmptyViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A4891F28DA697A00ADF3D7 /* EmptyViewSpec.swift */; };
 		98228D7D27BC489F006A38BB /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98228D7C27BC489F006A38BB /* Address.swift */; };
 		98228D7F27BC490E006A38BB /* RestaurantDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98228D7E27BC490E006A38BB /* RestaurantDetails.swift */; };
@@ -60,8 +62,10 @@
 		3AEC4CC728DA8E8900733231 /* CategoryCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellSpec.swift; sourceTree = "<group>"; };
 		53D70E9C975A30B7F20A3F8D /* Pods_DeliveryAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeliveryAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		811AB034AC0ED48496D3A4D8 /* Pods-DeliveryAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliveryAppTests.release.xcconfig"; path = "Target Support Files/Pods-DeliveryAppTests/Pods-DeliveryAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		872B627028DBB68700ED791F /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		876C15CD28D918780016A88E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		876C15CF28D91B6E0016A88E /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
+		8785338828DBC16100C75C4E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		87A4891E28DA697A00ADF3D7 /* DeliveryAppTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeliveryAppTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		87A4891F28DA697A00ADF3D7 /* EmptyViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewSpec.swift; sourceTree = "<group>"; };
 		98228D7C27BC489F006A38BB /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
@@ -116,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		872B626F28DBB66C00ED791F /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				872B627028DBB68700ED791F /* Label.swift */,
+				8785338828DBC16100C75C4E /* Color.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
 		87A4891C28DA695600ADF3D7 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +171,7 @@
 		983271BB272752AF0010C63A /* DeliveryApp */ = {
 			isa = PBXGroup;
 			children = (
+				872B626F28DBB66C00ED791F /* DesignSystem */,
 				983271EC272752C50010C63A /* Resources */,
 				983271ED272752D20010C63A /* AppDelegate */,
 				983271EE272752EE0010C63A /* Screens */,
@@ -516,6 +530,7 @@
 				3AEC4CC428DA671500733231 /* EmptyView.swift in Sources */,
 				98AF572427ADB16E00339A66 /* SampleComponentView.swift in Sources */,
 				98AF572527ADB16E00339A66 /* HomeViewController.swift in Sources */,
+				8785338928DBC16100C75C4E /* Color.swift in Sources */,
 				98AF572627ADB16E00339A66 /* HomeView.swift in Sources */,
 				98AF572727ADB16E00339A66 /* AddressSearchViewController.swift in Sources */,
 				98AF572827ADB16E00339A66 /* AddressListView.swift in Sources */,
@@ -530,6 +545,7 @@
 				98228D7D27BC489F006A38BB /* Address.swift in Sources */,
 				98AF572F27ADB16E00339A66 /* SettingsViewController.swift in Sources */,
 				98AF573027ADB16E00339A66 /* SettingsView.swift in Sources */,
+				872B627128DBB68700ED791F /* Label.swift in Sources */,
 				98AF573127ADB16E00339A66 /* DeliveryApi.swift in Sources */,
 				98AF573227ADB16E00339A66 /* Restaurant.swift in Sources */,
 				98AF573327ADB16E00339A66 /* String+Extensions.swift in Sources */,

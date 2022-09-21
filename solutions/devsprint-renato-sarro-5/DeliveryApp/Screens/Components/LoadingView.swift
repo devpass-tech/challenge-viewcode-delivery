@@ -10,7 +10,7 @@ import UIKit
 final class LoadingView: UIView, ViewCodeProtocol {
     
     private lazy var labelTitle: UILabel = {
-        let label = UILabel()
+        let label = UILabel.build(style: .callout, alignment: .center)
         label.text = "Buscando endereços..."
         label.translatesAutoresizingMaskIntoConstraints = false
         

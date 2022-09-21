@@ -5,7 +5,7 @@
 //  Created by Cleber Reis on 20/09/22.
 //
 
-import Foundation
+import UIKit
 import XCTest
 import SnapshotTesting
 
@@ -18,9 +18,10 @@ final class RestaurantCellSpec: XCTestCase {
     override func setUp() {
         
         sut = RestaurantCell()
+
+        let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 64)
         
-        sut?.widthAnchor.constraint(equalToConstant: 400).isActive = true
-        sut?.heightAnchor.constraint(equalToConstant: 64).isActive = true
+        sut?.frame = frame
         
     }
     
