@@ -54,9 +54,7 @@ import SwiftUI
 
 struct HomeViewController_Preview: PreviewProvider {
     static var previews: some View {
-        ViewControllerPreview {
-            HomeViewController()
-        }
+        HomeViewController().showPreview()
     }
 }
 #endif

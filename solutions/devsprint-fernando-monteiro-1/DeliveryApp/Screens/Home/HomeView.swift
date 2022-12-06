@@ -92,9 +92,7 @@ import SwiftUI
 
 struct HomeView_Preview: PreviewProvider {
     static var previews: some View {
-        ViewPreview {
-            HomeView()
-        }
+        HomeView().showPreview()
     }
 }
 #endif
