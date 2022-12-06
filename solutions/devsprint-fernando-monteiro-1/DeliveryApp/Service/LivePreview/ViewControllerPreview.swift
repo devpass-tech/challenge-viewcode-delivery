@@ -6,6 +6,8 @@
 //
 
 import UIKit
+
+#if DEBUG
 import SwiftUI
 
 struct ViewControllerPreview: UIViewControllerRepresentable {
@@ -21,7 +23,8 @@ struct ViewControllerPreview: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        //
+        
     }
 
 }
+#endif

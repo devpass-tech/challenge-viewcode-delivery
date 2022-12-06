@@ -6,6 +6,8 @@
 //
 
 import UIKit
+
+#if DEBUG
 import SwiftUI
 
 struct ViewPreview: UIViewRepresentable {
@@ -25,3 +27,4 @@ struct ViewPreview: UIViewRepresentable {
     }
 
 }
+#endif
