@@ -6,6 +6,7 @@
 //
 
 #if DEBUG
+import UIKit
 import SwiftUI
 
 extension UIViewController {

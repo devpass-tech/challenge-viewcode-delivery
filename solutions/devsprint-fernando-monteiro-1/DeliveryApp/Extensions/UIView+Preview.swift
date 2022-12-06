@@ -5,9 +5,8 @@
 //  Created by Julia Frederico on 06/12/22.
 //
 
-import UIKit
-
 #if DEBUG
+import UIKit
 import SwiftUI
 
 extension UIView {
