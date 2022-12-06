@@ -87,5 +87,15 @@ extension HomeView: UITableViewDataSource {
     }
 }
 
+#if DEBUG
+import SwiftUI
 
+struct HomeView_Preview: PreviewProvider {
+    static var previews: some View {
+        ViewPreview {
+            HomeView()
+        }
+    }
+}
+#endif
 
