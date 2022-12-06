@@ -92,7 +92,13 @@ import SwiftUI
 
 struct HomeView_Preview: PreviewProvider {
     static var previews: some View {
-        HomeView().showPreview()
+        let homeView = HomeView()
+        homeView.updateView(with: [
+            Restaurant.stub(),
+            Restaurant.stub(),
+            Restaurant.stub(),
+        ])
+        return homeView.showPreview()
     }
 }
 #endif
