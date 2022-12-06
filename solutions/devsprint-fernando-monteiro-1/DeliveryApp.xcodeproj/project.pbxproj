@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97B2F87C293FFEF100E49738 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 97B2F87B293FFEF100E49738 /* SnapshotTesting */; };
 		98228D7D27BC489F006A38BB /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98228D7C27BC489F006A38BB /* Address.swift */; };
 		98228D7F27BC490E006A38BB /* RestaurantDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98228D7E27BC490E006A38BB /* RestaurantDetails.swift */; };
 		983271C6272752B50010C63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983271C5272752B50010C63A /* Assets.xcassets */; };
@@ -145,18 +146,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97B2F87C293FFEF100E49738 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97B2F875293FF20600E49738 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		983271B0272752AF0010C63A = {
 			isa = PBXGroup;
 			children = (
 				983271BB272752AF0010C63A /* DeliveryApp */,
 				983271D2272752B50010C63A /* DeliveryAppTests */,
 				983271BA272752AF0010C63A /* Products */,
+				97B2F875293FF20600E49738 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -364,8 +374,11 @@
 			buildRules = (
 			);
 			dependencies = (
+				97B2F874293FF13900E49738 /* PBXTargetDependency */,
 			);
 			name = DeliveryApp;
+			packageProductDependencies = (
+			);
 			productName = DeliveryAppChallenge;
 			productReference = 983271B9272752AF0010C63A /* DeliveryApp.app */;
 			productType = "com.apple.product-type.application";
@@ -384,6 +397,9 @@
 				983271D1272752B50010C63A /* PBXTargetDependency */,
 			);
 			name = DeliveryAppTests;
+			packageProductDependencies = (
+				97B2F87B293FFEF100E49738 /* SnapshotTesting */,
+			);
 			productName = DeliveryAppChallengeTests;
 			productReference = 983271CF272752B50010C63A /* DeliveryAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -416,6 +432,9 @@
 				Base,
 			);
 			mainGroup = 983271B0272752AF0010C63A;
+			packageReferences = (
+				97B2F87A293FFEF100E49738 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = 983271BA272752AF0010C63A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -515,6 +534,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		97B2F874293FF13900E49738 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 97B2F873293FF13900E49738 /* SnapshotTesting */;
+		};
 		983271D1272752B50010C63A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 983271B8272752AF0010C63A /* DeliveryApp */;
@@ -787,6 +810,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		97B2F86E293FED5F00E49738 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = exactVersion;
+				version = 1.10.0;
+			};
+		};
+		97B2F87A293FFEF100E49738 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		97B2F873293FF13900E49738 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97B2F86E293FED5F00E49738 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+		97B2F87B293FFEF100E49738 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 97B2F87A293FFEF100E49738 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 983271B1272752AF0010C63A /* Project object */;
 }

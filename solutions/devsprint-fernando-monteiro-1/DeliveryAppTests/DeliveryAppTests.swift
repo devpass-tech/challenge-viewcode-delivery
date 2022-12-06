@@ -6,9 +6,16 @@
 //
 
 import XCTest
+import SnapshotTesting
 @testable import DeliveryApp
 
 class DeliveryAppTests: XCTestCase {
+    
+    func testMyViewController() {
+        let vc = HomeViewController()
+
+        assertSnapshot(matching: vc, as: .image)
+      }
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
