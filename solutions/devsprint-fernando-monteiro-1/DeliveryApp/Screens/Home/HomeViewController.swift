@@ -10,6 +10,8 @@ import UIKit
 class HomeViewController: UIViewController {
 
     private let deliveryApi = DeliveryApi()
+    
+    private let searchController = UISearchController()
 
     private let homeView: HomeView = {
 
@@ -42,10 +44,17 @@ class HomeViewController: UIViewController {
                 self.homeView.updateView(with: restaurants)
             }
         }
+        
+        configSearchBar()
     }
     
     override func loadView() {
         self.view = homeView
+    }
+    
+    private func configSearchBar() {
+        navigationItem.searchController = searchController
+        searchController.searchBar.placeholder = "Nome do restaurante"
     }
 }
 
