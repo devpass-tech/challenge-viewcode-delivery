@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		97B2F87C293FFEF100E49738 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 97B2F87B293FFEF100E49738 /* SnapshotTesting */; };
+		32A679FB293F939F005433A7 /* UIView+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A679FA293F939F005433A7 /* UIView+Preview.swift */; };
+		32A679FD293F942F005433A7 /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A679FC293F942F005433A7 /* UIViewController+Preview.swift */; };
 		98228D7D27BC489F006A38BB /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98228D7C27BC489F006A38BB /* Address.swift */; };
 		98228D7F27BC490E006A38BB /* RestaurantDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98228D7E27BC490E006A38BB /* RestaurantDetails.swift */; };
 		983271C6272752B50010C63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983271C5272752B50010C63A /* Assets.xcassets */; };
@@ -75,6 +78,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32A679FA293F939F005433A7 /* UIView+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Preview.swift"; sourceTree = "<group>"; };
+		32A679FC293F942F005433A7 /* UIViewController+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
 		98228D7C27BC489F006A38BB /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		98228D7E27BC490E006A38BB /* RestaurantDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetails.swift; sourceTree = "<group>"; };
 		983271B9272752AF0010C63A /* DeliveryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliveryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -275,6 +280,8 @@
 			isa = PBXGroup;
 			children = (
 				98C4368827ADAEBE00D9048A /* String+Extensions.swift */,
+				32A679FA293F939F005433A7 /* UIView+Preview.swift */,
+				32A679FC293F942F005433A7 /* UIViewController+Preview.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -472,6 +479,8 @@
 				98E5E05D293927B200E59E56 /* RatingView.swift in Sources */,
 				98E5E061293927CD00E59E56 /* MenuListView.swift in Sources */,
 				98AF572227ADB16E00339A66 /* AppDelegate.swift in Sources */,
+				32A679FD293F942F005433A7 /* UIViewController+Preview.swift in Sources */,
+				32A679FB293F939F005433A7 /* UIView+Preview.swift in Sources */,
 				98AF573627ADB34C00339A66 /* DebugViewController.swift in Sources */,
 				98AF572327ADB16E00339A66 /* SceneDelegate.swift in Sources */,
 				98E5E05B293927A700E59E56 /* RestaurantInfoView.swift in Sources */,

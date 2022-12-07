@@ -12,3 +12,17 @@ struct Address: Decodable {
     let number: String
     let neighborhood: String
 }
+
+#if DEBUG
+extension Address {
+    
+    static func stub() -> Address {
+        Address(
+            street: "Hogwarts Street",
+            number: "24",
+            neighborhood: "Hogsmead"
+        )
+    }
+    
+}
+#endif
