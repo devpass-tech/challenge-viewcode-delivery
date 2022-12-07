@@ -48,3 +48,13 @@ class HomeViewController: UIViewController {
         self.view = homeView
     }
 }
+
+#if DEBUG
+import SwiftUI
+
+struct HomeViewController_Preview: PreviewProvider {
+    static var previews: some View {
+        HomeViewController().showPreview()
+    }
+}
+#endif

@@ -17,3 +17,18 @@ struct DeliveryTime: Decodable {
     let min: Int
     let max: Int
 }
+
+
+#if DEBUG
+extension Restaurant {
+    
+    static func stub() -> Restaurant {
+        Restaurant(
+            name: "Amarelinho",
+            category: "Brasileira",
+            deliveryTime: DeliveryTime(min: 50, max: 120)
+        )
+    }
+    
+}
+#endif
