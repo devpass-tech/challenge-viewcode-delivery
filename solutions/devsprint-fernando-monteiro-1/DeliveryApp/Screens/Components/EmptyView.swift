@@ -54,6 +54,7 @@ class EmptyView: UIView {
 private extension EmptyView {
 
     func setupViews() {
+        self.backgroundColor = .white
 
         self.configureSubviews()
         self.configureSubviewsConstraints()
@@ -80,9 +81,19 @@ import SwiftUI
 
 struct EmptyView_Preview: PreviewProvider {
     static var previews: some View {
-        let emptyView = EmptyView(title: "Endereço não encontrado", subtitle: "Procure por ruas com número e bairro utilizando o campo de busca)
+        let emptyView = EmptyView.stub()
         
         return emptyView.showPreview()
+    }
+}
+
+extension EmptyView {
+    
+    static func stub() -> EmptyView {
+        EmptyView(
+            title: "Endereço não encontrado",
+            subtitle: "Procure por ruas com número e bairro utilizando o campo de busca"
+        )
     }
 }
 #endif
