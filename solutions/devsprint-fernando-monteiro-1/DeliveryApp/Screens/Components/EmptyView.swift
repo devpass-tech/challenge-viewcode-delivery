@@ -13,7 +13,6 @@ class EmptyView: UIView {
         let label = UILabel()
         
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Endereço não encontrado"
         label.font = .systemFont(ofSize: 16, weight: .semibold)
         return label
     }()
@@ -22,7 +21,6 @@ class EmptyView: UIView {
         let label = UILabel()
         
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Procure por ruas com número e bairro utilizando o campo de busca"
         label.numberOfLines = 0
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 13, weight: .regular)
@@ -39,10 +37,12 @@ class EmptyView: UIView {
         return stackView
     }()
     
-    init() {
+    init(title: String, subtitle: String) {
         super.init(frame: .zero)
-
         self.setupViews()
+        
+        titleLabel.text = title
+        subtitleLabel.text = subtitle
     }
 
     required init?(coder: NSCoder) {
@@ -80,7 +80,7 @@ import SwiftUI
 
 struct EmptyView_Preview: PreviewProvider {
     static var previews: some View {
-        let emptyView = EmptyView()
+        let emptyView = EmptyView(title: "Endereço não encontrado", subtitle: "Procure por ruas com número e bairro utilizando o campo de busca)
         
         return emptyView.showPreview()
     }
