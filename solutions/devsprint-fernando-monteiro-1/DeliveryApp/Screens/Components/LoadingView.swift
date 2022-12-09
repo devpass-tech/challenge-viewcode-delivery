@@ -15,9 +15,13 @@ class LoadingView: UIView {
     
     // MARK: - Initializer
     
-    init() {
+    init(title: String? = nil) {
         super.init(frame: .zero)
 
+        if let title = title {
+            self.title = title
+        }
+        
         self.setupViews()
     }
 
