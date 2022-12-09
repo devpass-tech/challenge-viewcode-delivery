@@ -67,9 +67,7 @@ private extension EmptyView {
     func configureSubviewsConstraints() {
 
         NSLayoutConstraint.activate([
-            subtitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 53),
-            subtitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -54),
-            
+            stackView.widthAnchor.constraint(equalToConstant: 283),
             stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
         ])
