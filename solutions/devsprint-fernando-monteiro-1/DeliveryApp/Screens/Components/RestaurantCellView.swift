@@ -115,7 +115,6 @@ private extension RestaurantCellView {
             
             restaurantImage.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8),
             restaurantImage.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            restaurantImage.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 8),
             restaurantImage.widthAnchor.constraint(equalToConstant: 48),
             restaurantImage.heightAnchor.constraint(equalToConstant: 48),
             
