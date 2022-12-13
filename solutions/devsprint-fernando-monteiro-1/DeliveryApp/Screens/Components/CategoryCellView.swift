@@ -90,7 +90,7 @@ extension CategoryCellView {
     static func stub() -> CategoryCellView {
         let imageName = "pizza.jpeg"
         let text = "Mercado"
-        return CategoryCellView(style: .default, reuseIdentifier: "test",imageName: imageName, text: text)
+        return CategoryCellView(style: .default, reuseIdentifier: "CategoryCellView",imageName: imageName, text: text)
     }
 }
 #endif
