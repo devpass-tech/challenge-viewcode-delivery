@@ -24,6 +24,13 @@ final class HomeView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    private lazy var addressView: AddressView = {
+        let view = AddressView()
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     private lazy var tableView: UITableView = {
 
@@ -64,20 +71,25 @@ private extension HomeView {
 
     func configureSubviews() {
 
-        self.addSubview(self.tableView)
+        self.addSubview(self.addressView)
         self.addSubview(self.dividerView)
+        self.addSubview(self.tableView)
     }
 
     func configureSubviewsConstraints() {
 
         NSLayoutConstraint.activate([
             
+            addressView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            addressView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            addressView.bottomAnchor.constraint(equalTo: dividerView.topAnchor),
+            
             dividerView.widthAnchor.constraint(equalTo: self.widthAnchor),
             dividerView.bottomAnchor.constraint(equalTo: tableView.topAnchor),
 
             self.tableView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            self.tableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            self.tableView.topAnchor.constraint(equalTo: dividerView.bottomAnchor),
             self.tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
