@@ -7,14 +7,14 @@
 
 import UIKit
 
-class CategoryCellView: UITableViewCell {
+class CategoryCellView: UICollectionViewCell {
     
     private let stackview:UIStackView = {
         let view = UIStackView(frame: CGRect.zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
         view.alignment = .center
-        view.spacing = 12
+        view.spacing = 10
         return view
     }()
     
@@ -30,47 +30,39 @@ class CategoryCellView: UITableViewCell {
         let label = UILabel(frame: CGRect.zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .gray
-        label.font = UIFont.systemFont(ofSize: 11)
+        label.font = UIFont.systemFont(ofSize: 12)
         label.isOpaque = true
         return label
     }()
-
-    init(style: UITableViewCell.CellStyle, reuseIdentifier: String?,imageName:String,text:String) {
-
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.setupViews(imageName: imageName, text: text)
-    }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
-    func setupViews(imageName:String,text:String){
-        self.image.image = UIImage(named: imageName)
-        self.label.text = text
+    func setupView(_ category:Category){
+        self.image.image = UIImage(named:category.imageName )
+        self.label.text = category.name
      
-        configureSubviews()
+        self.configureSubviews()
         
-        configureSubviewsConstraints()
+        self.configureSubviewsConstraints()
         
     }
     
-    func configureSubviews() {
+    private func configureSubviews() {
         self.contentView.addSubview(stackview)
         
         self.stackview.addArrangedSubview(image)
         self.stackview.addArrangedSubview(label)
     }
 
-    func configureSubviewsConstraints() {
+    private func configureSubviewsConstraints() {
 
         NSLayoutConstraint.activate([
             image.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
             image.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-            image.widthAnchor.constraint(equalToConstant: 50),
-            image.heightAnchor.constraint(equalToConstant: 50),
+            image.widthAnchor.constraint(equalToConstant: 54),
+            image.heightAnchor.constraint(equalToConstant: 54),
         ])
     }
+    
 }
 
 
@@ -79,18 +71,11 @@ import SwiftUI
 
 struct CategoryCellView_Preview: PreviewProvider {
     static var previews: some View {
-        let emptyView = CategoryCellView.stub()
+        let emptyView = CategoryCellView()
+        emptyView.setupView(.stub())
         
         return emptyView.showPreview()
     }
 }
 
-extension CategoryCellView {
-    
-    static func stub() -> CategoryCellView {
-        let imageName = "pizza.jpeg"
-        let text = "Mercado"
-        return CategoryCellView(style: .default, reuseIdentifier: "CategoryCellView",imageName: imageName, text: text)
-    }
-}
 #endif
