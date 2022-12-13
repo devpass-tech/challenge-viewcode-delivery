@@ -17,6 +17,13 @@ final class HomeView: UIView {
     private let restaurantCellIdentifier = "RestaurantCellIdentifier"
 
     private var restaurants: [Restaurant] = []
+    
+    private lazy var dividerView: DividerView = {
+        let view = DividerView()
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     private lazy var tableView: UITableView = {
 
@@ -58,11 +65,15 @@ private extension HomeView {
     func configureSubviews() {
 
         self.addSubview(self.tableView)
+        self.addSubview(self.dividerView)
     }
 
     func configureSubviewsConstraints() {
 
         NSLayoutConstraint.activate([
+            
+            dividerView.widthAnchor.constraint(equalTo: self.widthAnchor),
+            dividerView.bottomAnchor.constraint(equalTo: tableView.topAnchor),
 
             self.tableView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
