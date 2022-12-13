@@ -31,13 +31,13 @@ class AddressView: UIView {
     
     private lazy var editButton: UIButton = {
         let button = UIButton()
+        let attributeBtn = NSMutableAttributedString(string: "Editar", attributes: [NSAttributedString.Key.foregroundColor : UIColor.systemBlue, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12, weight: .semibold)])
         
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Editar", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
         button.layer.borderWidth = 1
         button.layer.cornerRadius = 8
         button.layer.borderColor = UIColor.systemBlue.cgColor
+        button.setAttributedTitle(attributeBtn, for: .normal)
         return button
     }()
     
