@@ -9,12 +9,15 @@ import UIKit
 
 class CategoryCellView: UICollectionViewCell {
     
+    static let identifier = "CategoryCellView"
+    
     private let stackview:UIStackView = {
         let view = UIStackView(frame: CGRect.zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.axis = .vertical
         view.alignment = .center
         view.spacing = 10
+        view.backgroundColor = .yellow
         return view
     }()
     
@@ -39,6 +42,7 @@ class CategoryCellView: UICollectionViewCell {
     func setupView(_ category:Category){
         self.image.image = UIImage(named:category.imageName )
         self.label.text = category.name
+        self.backgroundColor = .red
      
         self.configureSubviews()
         
@@ -56,8 +60,8 @@ class CategoryCellView: UICollectionViewCell {
     private func configureSubviewsConstraints() {
 
         NSLayoutConstraint.activate([
-            image.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            image.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            stackview.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            stackview.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             image.widthAnchor.constraint(equalToConstant: 54),
             image.heightAnchor.constraint(equalToConstant: 54),
         ])

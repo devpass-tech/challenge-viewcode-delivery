@@ -17,6 +17,20 @@ final class HomeView: UIView {
     private let restaurantCellIdentifier = "RestaurantCellIdentifier"
 
     private var restaurants: [Restaurant] = []
+    
+    private lazy var categoryCollectionView: CategoryListView = {
+        
+        let collectionViewLayout = UICollectionViewFlowLayout()
+        collectionViewLayout.itemSize = CGSize(width: 62, height: 122)
+        collectionViewLayout.scrollDirection = .horizontal
+        collectionViewLayout.minimumInteritemSpacing = 0
+        collectionViewLayout.sectionInset = UIEdgeInsets.zero
+        
+        let view = CategoryListView(frame: .zero, collectionViewLayout: collectionViewLayout)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
+        return view
+    }()
 
     private lazy var tableView: UITableView = {
 
@@ -56,17 +70,23 @@ private extension HomeView {
     }
 
     func configureSubviews() {
-
+        
+        self.addSubview(self.categoryCollectionView)
         self.addSubview(self.tableView)
+        
     }
 
     func configureSubviewsConstraints() {
 
         NSLayoutConstraint.activate([
-
+            self.categoryCollectionView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            self.categoryCollectionView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            self.categoryCollectionView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            self.categoryCollectionView.heightAnchor.constraint(equalToConstant: 122.5),
+            
             self.tableView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            self.tableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            self.tableView.topAnchor.constraint(equalTo: self.categoryCollectionView.bottomAnchor),
             self.tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
