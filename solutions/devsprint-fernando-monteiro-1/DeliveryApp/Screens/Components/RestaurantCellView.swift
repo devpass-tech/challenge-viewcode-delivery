@@ -13,19 +13,11 @@ class RestaurantCellView: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupViews()
-        setupCell(restaurant: Restaurant.stub())
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private lazy var containerView: UIView = {
-        let view = UIView()
-        
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
     
     private lazy var restaurantImage: UIImageView = {
         let image = UIImageView()
@@ -42,6 +34,7 @@ class RestaurantCellView: UITableViewCell {
         let label = UILabel()
         
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 15, weight: .semibold)
         return label
     }()
     
@@ -49,6 +42,7 @@ class RestaurantCellView: UITableViewCell {
         let label = UILabel()
         
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 13, weight: .light)
         return label
     }()
     
@@ -56,6 +50,7 @@ class RestaurantCellView: UITableViewCell {
         let label = UILabel()
         
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 13, weight: .light)
         return label
     }()
     
@@ -74,6 +69,7 @@ class RestaurantCellView: UITableViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 0
+        stackView.alignment = .leading
         return stackView
     }()
     
@@ -100,21 +96,17 @@ private extension RestaurantCellView {
     }
 
     func configureSubviews() {
-        self.addSubview(containerView)
-        containerView.addSubview(restaurantImage)
-        containerView.addSubview(stackView)
+        contentView.addSubview(restaurantImage)
+        contentView.addSubview(stackView)
     }
 
     func configureSubviewsConstraints() {
 
         NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 23),
-            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -23),
-            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
             
-            restaurantImage.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8),
-            restaurantImage.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            restaurantImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            restaurantImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
+            restaurantImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             restaurantImage.widthAnchor.constraint(equalToConstant: 48),
             restaurantImage.heightAnchor.constraint(equalToConstant: 48),
             
@@ -130,7 +122,10 @@ import SwiftUI
 
 struct RestaurantCellView_Preview: PreviewProvider {
     static var previews: some View {
-        return RestaurantCellView().showPreview()
+        let view = RestaurantCellView()
+        
+        view.setupCell(restaurant: .stub())
+        return view.showPreview()
     }
 }
 #endif
