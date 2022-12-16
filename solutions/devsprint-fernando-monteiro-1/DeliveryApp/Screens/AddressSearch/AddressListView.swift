@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddressListView: UIView {
+class AddressListView: UITableView {
 
     func updateView(with addresses: [Address]) {
         
