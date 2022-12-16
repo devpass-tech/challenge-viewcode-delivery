@@ -17,6 +17,27 @@ final class HomeView: UIView {
     private let restaurantCellIdentifier = "RestaurantCellIdentifier"
 
     private var restaurants: [Restaurant] = []
+    
+    private lazy var firstdDividerView: DividerView = {
+        let view = DividerView()
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var secondDividerView: DividerView = {
+        let view = DividerView()
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var addressView: AddressView = {
+        let view = AddressView()
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     private lazy var tableView: UITableView = {
 
@@ -57,16 +78,31 @@ private extension HomeView {
 
     func configureSubviews() {
 
+        self.addSubview(self.firstdDividerView)
+        self.addSubview(self.addressView)
+        self.addSubview(self.secondDividerView)
         self.addSubview(self.tableView)
     }
 
     func configureSubviewsConstraints() {
 
         NSLayoutConstraint.activate([
+            
+            firstdDividerView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            firstdDividerView.widthAnchor.constraint(equalTo: self.widthAnchor),
+            
+            
+            addressView.topAnchor.constraint(equalTo: firstdDividerView.bottomAnchor),
+            addressView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            addressView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            addressView.bottomAnchor.constraint(equalTo: secondDividerView.topAnchor),
+            
+            secondDividerView.widthAnchor.constraint(equalTo: self.widthAnchor),
+            secondDividerView.bottomAnchor.constraint(equalTo: tableView.topAnchor),
 
             self.tableView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            self.tableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            self.tableView.topAnchor.constraint(equalTo: secondDividerView.bottomAnchor),
             self.tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
         ])
     }

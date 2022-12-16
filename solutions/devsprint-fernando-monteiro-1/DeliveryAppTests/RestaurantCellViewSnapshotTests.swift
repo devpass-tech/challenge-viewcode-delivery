@@ -6,7 +6,20 @@
 //
 
 import XCTest
+import SnapshotTesting
+@testable import DeliveryApp
 
-class RestaurantCellViewSnapshotTests {
-
+class RestaurantCellViewSnapshotTests: XCTestCase {
+    
+    func test_restaurantCellView_defaultState() {
+        let restaurantCellView = RestaurantCellView()
+        restaurantCellView.frame = CGRect(x: 0, y: 0, width: 390, height: 64)
+        
+        let result = verifySnapshot(matching: restaurantCellView,
+                                    as: .image,
+                                    named: "Default",
+                                    testName: "RestaurantCellView")
+        
+        XCTAssertNil(result)
+    }
 }
