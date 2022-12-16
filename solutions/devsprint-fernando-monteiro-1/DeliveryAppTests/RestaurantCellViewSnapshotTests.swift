@@ -13,6 +13,7 @@ class RestaurantCellViewSnapshotTests: XCTestCase {
     
     func test_restaurantCellView_defaultState() {
         let restaurantCellView = RestaurantCellView()
+        restaurantCellView.setupCell(restaurant: .stub())
         restaurantCellView.frame = CGRect(x: 0, y: 0, width: 390, height: 64)
         
         let result = verifySnapshot(matching: restaurantCellView,

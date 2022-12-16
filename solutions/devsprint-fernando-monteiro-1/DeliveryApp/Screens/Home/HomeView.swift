@@ -9,7 +9,7 @@ import UIKit
 
 struct HomeViewConfiguration {
 
-    let restaurants: [String]
+    let restaurants: [Restaurant]
 }
 
 final class HomeView: UIView {
@@ -18,7 +18,7 @@ final class HomeView: UIView {
 
     private var restaurants: [Restaurant] = []
     
-    private lazy var firstdDividerView: DividerView = {
+    private lazy var firstDividerView: DividerView = {
         let view = DividerView()
         
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -32,19 +32,17 @@ final class HomeView: UIView {
         return view
     }()
     
-    private lazy var addressView: AddressView = {
+    lazy var addressView: AddressView = {
         let view = AddressView()
         
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    private lazy var tableView: UITableView = {
-
-        let tableView = UITableView(frame: .zero)
+    lazy var tableView: RestaurantListView = {
+        let tableView = RestaurantListView()
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.restaurantCellIdentifier)
-        tableView.dataSource = self
         return tableView
     }()
 
@@ -59,9 +57,8 @@ final class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func updateView(with restaurants: [Restaurant]) {
+    func updateView() {
 
-        self.restaurants = restaurants
         self.tableView.reloadData()
     }
 }
@@ -78,7 +75,7 @@ private extension HomeView {
 
     func configureSubviews() {
 
-        self.addSubview(self.firstdDividerView)
+        self.addSubview(self.firstDividerView)
         self.addSubview(self.addressView)
         self.addSubview(self.secondDividerView)
         self.addSubview(self.tableView)
@@ -88,11 +85,11 @@ private extension HomeView {
 
         NSLayoutConstraint.activate([
             
-            firstdDividerView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-            firstdDividerView.widthAnchor.constraint(equalTo: self.widthAnchor),
+            firstDividerView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            firstDividerView.widthAnchor.constraint(equalTo: self.widthAnchor),
             
             
-            addressView.topAnchor.constraint(equalTo: firstdDividerView.bottomAnchor),
+            addressView.topAnchor.constraint(equalTo: firstDividerView.bottomAnchor),
             addressView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             addressView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             addressView.bottomAnchor.constraint(equalTo: secondDividerView.topAnchor),
@@ -108,32 +105,13 @@ private extension HomeView {
     }
 }
 
-extension HomeView: UITableViewDataSource {
-
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return self.restaurants.count
-    }
-
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.restaurantCellIdentifier)!
-        cell.textLabel?.text = self.restaurants[indexPath.row].name
-        return cell
-    }
-}
-
 #if DEBUG
 import SwiftUI
 
 struct HomeView_Preview: PreviewProvider {
     static var previews: some View {
         let homeView = HomeView()
-        homeView.updateView(with: [
-            Restaurant.stub(),
-            Restaurant.stub(),
-            Restaurant.stub(),
-        ])
+        
         return homeView.showPreview()
     }
 }

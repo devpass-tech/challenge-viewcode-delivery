@@ -7,7 +7,14 @@
 
 import UIKit
 
+struct RestaurantListViewConfiguration {
+
+    let restaurants: [Restaurant]
+}
+
 class RestaurantListViewController: UIViewController {
+    
+    let restaurantListView = RestaurantListView()
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -20,6 +27,7 @@ class RestaurantListViewController: UIViewController {
     }
 
     override func loadView() {
-        self.view = RestaurantListView()
+        self.view = restaurantListView
     }
+    
 }
