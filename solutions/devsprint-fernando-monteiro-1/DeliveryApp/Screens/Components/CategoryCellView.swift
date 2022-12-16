@@ -17,7 +17,6 @@ class CategoryCellView: UICollectionViewCell {
         view.axis = .vertical
         view.alignment = .center
         view.spacing = 10
-        view.backgroundColor = .yellow
         return view
     }()
     
@@ -42,7 +41,6 @@ class CategoryCellView: UICollectionViewCell {
     func setupView(_ category:Category){
         self.image.image = UIImage(named:category.imageName )
         self.label.text = category.name
-        self.backgroundColor = .red
      
         self.configureSubviews()
         

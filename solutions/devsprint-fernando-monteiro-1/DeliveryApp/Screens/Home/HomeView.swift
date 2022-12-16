@@ -18,12 +18,14 @@ final class HomeView: UIView {
 
     private var restaurants: [Restaurant] = []
     
+    private var categories:[Category] = []
+    
     private lazy var categoryCollectionView: CategoryListView = {
         
         let collectionViewLayout = UICollectionViewFlowLayout()
         collectionViewLayout.itemSize = CGSize(width: 62, height: 122)
         collectionViewLayout.scrollDirection = .horizontal
-        collectionViewLayout.minimumInteritemSpacing = 0
+        collectionViewLayout.minimumLineSpacing = 0
         collectionViewLayout.sectionInset = UIEdgeInsets.zero
         
         let view = CategoryListView(frame: .zero, collectionViewLayout: collectionViewLayout)

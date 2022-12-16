@@ -9,14 +9,13 @@ import UIKit
 
 class CategoryListView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
  
-    private var categories:[Category] = [.stub(), .stub(), .stub(), .stub(), .stub(), .stub(), .stub(), .stub(), .stub(), .stub(), .stub(), .stub()]
-   
+    private var categories:[Category] = []
+    
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         
         super.init(frame: frame, collectionViewLayout: layout)
         self.delegate = self
         self.dataSource = self
-        self.backgroundColor = .gray
         register(CategoryCellView.self, forCellWithReuseIdentifier: CategoryCellView.identifier)
         
     }
@@ -55,16 +54,20 @@ import SwiftUI
 struct CategoryListView_Preview: PreviewProvider {
     static var previews: some View {
         
+        
         let collectionViewLayout = UICollectionViewFlowLayout()
         collectionViewLayout.itemSize = CGSize(width: 62, height: 122)
         collectionViewLayout.scrollDirection = .horizontal
-        collectionViewLayout.minimumInteritemSpacing = 0
+        collectionViewLayout.minimumLineSpacing = 0
         collectionViewLayout.sectionInset = UIEdgeInsets.zero
 
         
         let view = CategoryListView(frame: CGRect(x: 0, y: 0, width: 1000, height: 140), collectionViewLayout: collectionViewLayout)
-//        view.setupView(.stub())
-        
+        view.updateView(.stub())
+        view.updateView(.stub())
+        view.updateView(.stub())
+        view.updateView(.stub())
+                
         return view.showPreview()
     }
 }
