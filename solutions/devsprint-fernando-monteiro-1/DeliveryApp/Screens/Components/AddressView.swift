@@ -7,15 +7,20 @@
 
 import UIKit
 
+protocol AddressViewDelegate: AnyObject {
+    func pushAddresSearchView()
+}
+
 class AddressView: UIView {
     
-    override init(frame: CGRect) {
-        super.init(frame: .zero
-        )
+    weak var delegate: AddressViewDelegate?
+    
+    init() {
+        super.init(frame: .zero)
         
         setupViews()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -38,6 +43,7 @@ class AddressView: UIView {
         button.layer.cornerRadius = 8
         button.layer.borderColor = UIColor.systemBlue.cgColor
         button.setAttributedTitle(attributeBtn, for: .normal)
+        button.addTarget(self, action: #selector(didTapEditButton), for: .touchUpInside)
         return button
     }()
     
@@ -50,6 +56,10 @@ class AddressView: UIView {
         stackView.alignment = .center
         return stackView
     }()
+    
+    @objc func didTapEditButton () {
+        delegate?.pushAddresSearchView()
+    }
     
 }
 
@@ -74,6 +84,7 @@ private extension AddressView {
             
             editButton.heightAnchor.constraint(equalToConstant: 32),
             editButton.widthAnchor.constraint(equalToConstant: 60),
+            
             stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 17),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 18),
             stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -17)
