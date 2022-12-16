@@ -8,31 +8,35 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
-    private let deliveryApi = DeliveryApi()
     
     private let searchController = UISearchController()
+    
+    let deliveryApi = DeliveryApi()
 
-    private let homeView: HomeView = {
+    private lazy var homeView: HomeView = {
 
         let homeView = HomeView()
+        homeView.addressView.delegate = self
         return homeView
+    }()
+    
+    private lazy var addressView: AddressView = {
+        let addressView = AddressView()
+
+        return addressView
     }()
 
     init() {
         super.init(nibName: nil, bundle: nil)
-
+        
         navigationItem.title = "Delivery App"
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    override func viewDidLoad() {
-
-        navigationController?.navigationBar.prefersLargeTitles = true
-
+    
+    override func viewWillAppear(_ animated: Bool) {
         deliveryApi.fetchRestaurants { restaurants in
 
             guard let restaurants = restaurants else {
@@ -40,10 +44,16 @@ class HomeViewController: UIViewController {
             }
 
             DispatchQueue.main.async {
-
-                self.homeView.updateView(with: restaurants)
+                let tableView = self.homeView.tableView
+                
+                tableView.updateTableView(restaurants: restaurants)
             }
         }
+    }
+
+    override func viewDidLoad() {
+
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         configSearchBar()
     }
@@ -55,6 +65,14 @@ class HomeViewController: UIViewController {
     private func configSearchBar() {
         navigationItem.searchController = searchController
         searchController.searchBar.placeholder = "Nome do restaurante"
+    }
+}
+
+extension HomeViewController: AddressViewDelegate {
+    
+    func pushAddresSearchView() {
+        let controller = AddressSearchViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
 

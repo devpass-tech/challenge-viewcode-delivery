@@ -9,7 +9,7 @@ import UIKit
 
 struct HomeViewConfiguration {
 
-    let restaurants: [String]
+    let restaurants: [Restaurant]
 }
 
 final class HomeView: UIView {
@@ -33,13 +33,32 @@ final class HomeView: UIView {
         view.contentInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
         return view
     }()
+    
+    private lazy var firstDividerView: DividerView = {
+        let view = DividerView()
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var secondDividerView: DividerView = {
+        let view = DividerView()
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    lazy var addressView: AddressView = {
+        let view = AddressView()
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
-    private lazy var tableView: UITableView = {
-
-        let tableView = UITableView(frame: .zero)
+    lazy var tableView: RestaurantListView = {
+        let tableView = RestaurantListView()
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.restaurantCellIdentifier)
-        tableView.dataSource = self
         return tableView
     }()
 
@@ -54,9 +73,8 @@ final class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func updateView(with restaurants: [Restaurant]) {
+    func updateView() {
 
-        self.restaurants = restaurants
         self.tableView.reloadData()
     }
 }
@@ -73,7 +91,10 @@ private extension HomeView {
 
     func configureSubviews() {
         
+        self.addSubview(self.addressView)
+        self.addSubview(self.firstDividerView)
         self.addSubview(self.categoryCollectionView)
+        self.addSubview(self.secondDividerView)
         self.addSubview(self.tableView)
         
     }
@@ -81,31 +102,30 @@ private extension HomeView {
     func configureSubviewsConstraints() {
 
         NSLayoutConstraint.activate([
+            
+            addressView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            addressView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            addressView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+ 
+            
+            firstDividerView.topAnchor.constraint(equalTo: self.addressView.bottomAnchor),
+            firstDividerView.widthAnchor.constraint(equalTo: self.widthAnchor),
+            
             self.categoryCollectionView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             self.categoryCollectionView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            self.categoryCollectionView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            self.categoryCollectionView.topAnchor.constraint(equalTo: self.firstDividerView.bottomAnchor),
             self.categoryCollectionView.heightAnchor.constraint(equalToConstant: 122.5),
+           
             
+            secondDividerView.widthAnchor.constraint(equalTo: self.widthAnchor),
+            secondDividerView.topAnchor.constraint(equalTo: self.categoryCollectionView.bottomAnchor),
+            
+
             self.tableView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
-            self.tableView.topAnchor.constraint(equalTo: self.categoryCollectionView.bottomAnchor),
+            self.tableView.topAnchor.constraint(equalTo: secondDividerView.bottomAnchor),
             self.tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
         ])
-    }
-}
-
-extension HomeView: UITableViewDataSource {
-
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return self.restaurants.count
-    }
-
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.restaurantCellIdentifier)!
-        cell.textLabel?.text = self.restaurants[indexPath.row].name
-        return cell
     }
 }
 
@@ -115,11 +135,7 @@ import SwiftUI
 struct HomeView_Preview: PreviewProvider {
     static var previews: some View {
         let homeView = HomeView()
-        homeView.updateView(with: [
-            Restaurant.stub(),
-            Restaurant.stub(),
-            Restaurant.stub(),
-        ])
+        
         return homeView.showPreview()
     }
 }

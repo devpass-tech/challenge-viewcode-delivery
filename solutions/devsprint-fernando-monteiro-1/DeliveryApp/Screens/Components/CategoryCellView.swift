@@ -38,7 +38,7 @@ class CategoryCellView: UICollectionViewCell {
     }()
     
     
-    func setupView(_ category:Category){
+    func setupView(_ category: Category){
         self.image.image = UIImage(named:category.imageName )
         self.label.text = category.name
      
