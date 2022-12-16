@@ -7,6 +7,6 @@
 
 import UIKit
 
-class AddressCellView: UIView {
+class AddressCellView: UITableViewCell {
 
 }

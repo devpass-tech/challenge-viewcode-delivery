@@ -2,9 +2,8 @@
 //  Category.swift
 //  DeliveryApp
 //
-//  Created by Christian Rezende on 13/12/22.
+//  Created by José Vitor Scheffer Boff dos Santos on 16/12/22.
 //
-
 
 import Foundation
 

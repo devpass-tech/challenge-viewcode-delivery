@@ -8,18 +8,21 @@
 import UIKit
 
 class AddressSearchViewController: UIViewController {
+    
+    private let searchController = UISearchController()
 
     private let deliveryApi = DeliveryApi()
 
-    private let addressListView: AddressListView = {
-
-        let addressListView = AddressListView()
-        return addressListView
+    private lazy var addressSearchView: AddressSearchView = {
+        let addressSearchView = AddressSearchView()
+        
+        return addressSearchView
     }()
 
     init() {
         super.init(nibName: nil, bundle: nil)
 
+        navigationItem.title = "Search"
     }
 
     required init?(coder: NSCoder) {
@@ -27,7 +30,7 @@ class AddressSearchViewController: UIViewController {
     }
 
     override func loadView() {
-        self.view = addressListView
+        self.view = addressSearchView
     }
 
     override func viewDidLoad() {
@@ -39,9 +42,27 @@ class AddressSearchViewController: UIViewController {
             }
 
             DispatchQueue.main.async {
+                let tableView = self.addressSearchView.tableView
 
-                self.addressListView.updateView(with: addresses)
+                tableView.updateView(with: addresses)
             }
         }
+        
+        configSearchBar()
+    }
+    
+    private func configSearchBar() {
+        navigationItem.searchController = searchController
+        searchController.searchBar.placeholder = "Rua, número, bairro"
     }
 }
+
+#if DEBUG
+import SwiftUI
+
+struct AddressSearchViewController_Preview: PreviewProvider {
+    static var previews: some View {
+        AddressSearchViewController().showPreview()
+    }
+}
+#endif
