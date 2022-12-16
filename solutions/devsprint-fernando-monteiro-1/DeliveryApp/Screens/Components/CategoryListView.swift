@@ -24,9 +24,9 @@ class CategoryListView: UICollectionView, UICollectionViewDataSource, UICollecti
         super.init(coder: coder)
     }
     
-    func updateView(_ category:Category) {
+    func updateView(_ categoryList:[Category]) {
         
-        categories.append(category)
+        categories = Array((Set(categoryList)))
         self.reloadData()
         
     }
@@ -63,10 +63,7 @@ struct CategoryListView_Preview: PreviewProvider {
 
         
         let view = CategoryListView(frame: CGRect(x: 0, y: 0, width: 1000, height: 140), collectionViewLayout: collectionViewLayout)
-        view.updateView(.stub())
-        view.updateView(.stub())
-        view.updateView(.stub())
-        view.updateView(.stub())
+        view.updateView([.stub(), .stub(), .stub(), .stub()])
                 
         return view.showPreview()
     }

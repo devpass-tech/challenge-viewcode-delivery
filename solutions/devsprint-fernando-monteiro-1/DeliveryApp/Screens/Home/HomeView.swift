@@ -20,7 +20,7 @@ final class HomeView: UIView {
     
     private var categories:[Category] = []
     
-    private lazy var categoryCollectionView: CategoryListView = {
+    lazy var categoryCollectionView: CategoryListView = {
         
         let collectionViewLayout = UICollectionViewFlowLayout()
         collectionViewLayout.itemSize = CGSize(width: 62, height: 122)
