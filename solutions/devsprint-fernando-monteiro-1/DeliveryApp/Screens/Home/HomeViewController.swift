@@ -47,8 +47,16 @@ class HomeViewController: UIViewController {
                 let tableView = self.homeView.tableView
                 
                 tableView.updateTableView(restaurants: restaurants)
+                
+                let categoryListView = self.homeView.categoryCollectionView
+                
+                categoryListView.updateView(restaurants.map({ restaurant in
+                    return Category(name: restaurant.category, imageName: "pizza.png")
+                }))
+                
             }
         }
+        
     }
 
     override func viewDidLoad() {

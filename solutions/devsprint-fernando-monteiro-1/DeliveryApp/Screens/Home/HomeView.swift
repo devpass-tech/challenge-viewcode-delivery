@@ -18,6 +18,22 @@ final class HomeView: UIView {
 
     private var restaurants: [Restaurant] = []
     
+    private var categories:[Category] = []
+    
+    lazy var categoryCollectionView: CategoryListView = {
+        
+        let collectionViewLayout = UICollectionViewFlowLayout()
+        collectionViewLayout.itemSize = CGSize(width: 62, height: 122)
+        collectionViewLayout.scrollDirection = .horizontal
+        collectionViewLayout.minimumLineSpacing = 0
+        collectionViewLayout.sectionInset = UIEdgeInsets.zero
+        
+        let view = CategoryListView(frame: .zero, collectionViewLayout: collectionViewLayout)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
+        return view
+    }()
+    
     private lazy var firstDividerView: DividerView = {
         let view = DividerView()
         
@@ -74,28 +90,36 @@ private extension HomeView {
     }
 
     func configureSubviews() {
-
-        self.addSubview(self.firstDividerView)
+        
         self.addSubview(self.addressView)
+        self.addSubview(self.firstDividerView)
+        self.addSubview(self.categoryCollectionView)
         self.addSubview(self.secondDividerView)
         self.addSubview(self.tableView)
+        
     }
 
     func configureSubviewsConstraints() {
 
         NSLayoutConstraint.activate([
             
-            firstDividerView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-            firstDividerView.widthAnchor.constraint(equalTo: self.widthAnchor),
-            
-            
-            addressView.topAnchor.constraint(equalTo: firstDividerView.bottomAnchor),
+            addressView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             addressView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             addressView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            addressView.bottomAnchor.constraint(equalTo: secondDividerView.topAnchor),
+ 
+            
+            firstDividerView.topAnchor.constraint(equalTo: self.addressView.bottomAnchor),
+            firstDividerView.widthAnchor.constraint(equalTo: self.widthAnchor),
+            
+            self.categoryCollectionView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            self.categoryCollectionView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            self.categoryCollectionView.topAnchor.constraint(equalTo: self.firstDividerView.bottomAnchor),
+            self.categoryCollectionView.heightAnchor.constraint(equalToConstant: 122.5),
+           
             
             secondDividerView.widthAnchor.constraint(equalTo: self.widthAnchor),
-            secondDividerView.bottomAnchor.constraint(equalTo: tableView.topAnchor),
+            secondDividerView.topAnchor.constraint(equalTo: self.categoryCollectionView.bottomAnchor),
+            
 
             self.tableView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Category: Decodable {
+struct Category: Decodable, Hashable {
     let name: String
     let imageName: String
 }

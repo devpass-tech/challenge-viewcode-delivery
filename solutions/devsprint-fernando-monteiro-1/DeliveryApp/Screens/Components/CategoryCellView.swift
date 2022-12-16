@@ -9,6 +9,8 @@ import UIKit
 
 class CategoryCellView: UICollectionViewCell {
     
+    static let identifier = "CategoryCellView"
+    
     private let stackview:UIStackView = {
         let view = UIStackView(frame: CGRect.zero)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -56,8 +58,8 @@ class CategoryCellView: UICollectionViewCell {
     private func configureSubviewsConstraints() {
 
         NSLayoutConstraint.activate([
-            image.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            image.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+            stackview.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            stackview.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             image.widthAnchor.constraint(equalToConstant: 54),
             image.heightAnchor.constraint(equalToConstant: 54),
         ])
